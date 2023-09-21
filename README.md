@@ -6,7 +6,7 @@ and to learn about the environmental impacts of doing so.
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* Danton Soares
+* Hi, my name is Danton Soares. Excited to embark in this journey ☕
 * Dipenvir Kaur
 * Hi, my name is Steven and I hope our group can get a good mark on this project!
 	
