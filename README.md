@@ -9,6 +9,7 @@ List team members and/or short bio's here...
 * Hi, my name is Danton Soares. Excited to embark in this journey ☕
 * Hey, my name is Dipen and I can't wait to work hard and achieve success with my team.
 * Hi, my name is Steven and I hope our group can get a good mark on this project!
+* Hi, my name is Anne and I hope we can achieve teamwork success on this project!
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
