@@ -1,1 +1,37 @@
+nav {
+  color: black;
+}
+.bg-info {
+  background-color: black !important; /* Medium shade for navbar */
+}
 
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
+  color: white; /* Light shade for brand name & nav links for contrast */
+  font-size: 150%;
+}
+
+.btn-info {
+  color: lightgray; /* Light shade for text on info button */
+  background-color: #15616D; /* Accent color for button background */
+  border-color: #001524; /* Dark shade for button border */
+}
+
+.btn-primary {
+  color: white; /* Light shade for text */
+  font-size: 150%;
+  background-color: #FFECD1; /* Dark shade for primary button background */
+  border-color: #78290F; /* Darkest shade for border */
+  border-width: thick;
+}
+
+.material-icons{
+  color:#FF7D00;
+}
+
+body {
+  background-color: #e0e0e0; /* Light shade for body background */
+}
+
+div{
+  margin-bottom: 10px;
+}
