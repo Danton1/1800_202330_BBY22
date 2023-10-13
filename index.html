@@ -1,94 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>BBY-22</title>
-    <meta name="comp1800 template" content="My 1800 App">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherSafe</title>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap Library CSS CDN go here -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <!-- Boostrap Library JS CDN  go here -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
-
-    <!-- Other libraries go here -->
-
-    <!-- Link to styles of your own -->
+    <!-- Font-awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Custom css file link -->
     <link rel="stylesheet" href="./styles/style.css">
 
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
 </head>
-
 <body>
+    <!-- Preloader Section Starts Here -->
+    <div class="preloader" id="preloader"></div>
+    <!-- Preloader Section Ends Here -->
+    <!-- Header Section Starts Here -->
+    <header class="header">
+        <a href="#" class="logo"><img src="./images/logo.png" class="logo-img" alt=""><span>Cipher</span>Safe<strong></strong></a>
+        <div id="menu-btn" class="fas fa-bars">
+        </div>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+        <nav class="navbar">
+                <a href="#home"><i class="fa-solid fa-house-chimney"></i>  Home</a>
+                <a href="#learning"><i class="fa-solid fa-list"></i>  Password Manager</a>
+                <a href="#learning"><i class="fa-solid fa-spell-check"></i>  Password Checker</a>
+                <a href="#learning"><i class="fa-solid fa-circle-info"></i>  About Us</a>
+        </nav>
+    </header>
+    <!-- Header Section Ends Here -->
+    <main>
+    <!-- Home Section Starts Here -->
 
-    <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
-        <div class="container-fluid">
-            <img src="./images/Logo.jpg" width = 50px>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse" id="navbarsExample01">
-                <ul class="navbar-nav me-auto mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Password Checker</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">Password Manager</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">Learning Hub</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">About Us</a>
-                    </li>
-                </ul>
+    <!-- Home Section Ends Here -->
+    <!-- Learning Hub Section Starts Here -->
+    <section class="features" id="learning">
+        <h1 class="heading"><span><i class="fa-solid fa-mug-hot"></i> Learning Hub </span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <a href="#"><img src="./images/lock.jpg" alt=""></a>
+                </div>
+                <a href="#">
+                    <div class="content">
+                        <img src="./images/shield.png" alt="">
+                        <h3>Keeping your account secure</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus?</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </a>
+            </div>
+            <div class="box second">
+                <div class="image">
+                    <a href="#"><img src="./images/password.jpg" alt=""></a>
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <img src="./images/reset_safety.png" alt="">
+                        <h3>What defines a good password?</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <a href="#"><img src="./images/data-breach.png" alt=""></a>
+                </div>
+                <div class="content">
+                    <a href="#">
+                        <img src="./images/breaches.png" alt="">
+                        <h3>Latest Data Breaches</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </a>
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="my-5">
-        <div class="p-5 text-center bg-body-tertiary">
-            <div class="container py-5">
-                <h1 class="text-body-emphasis">CipherSafe</h1>
-                <p class="col-lg-8 mx-auto lead">
-                    <!--Search Bar here-->
-                </p>
-            </div>
-        </div>
-    </div>
+    </section>
+    <!-- Learning Hub Section Ends Here -->
 
-    <!-- copyright footer -->
-    <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-        </ul>
-        <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
-    </footer>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+    <!-- Banner Section Starts Here -->
 
-    <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
+    <!-- Banner Section Ends Here -->
 
+    <!-- Footer Section Starts Here -->
+    
+    <!-- Footer Section Ends Here -->
+    </main>
+    <!-- Custom JavaScript file link -->
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
