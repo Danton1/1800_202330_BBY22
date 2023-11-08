@@ -1,0 +1,133 @@
+main {
+	margin: 0 auto;
+	font-size: 14px;
+	line-height: 24px;
+	background:#101318;
+} 
+
+div,p,input,ul,li,h1,h2,h3,h4 {
+	height: auto;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #141515;
+}
+
+a:hover {
+	color: #1575be;
+}
+
+img {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.content{
+	width:1200px;
+	height:auto;
+	overflow:hidden;
+	margin:0 auto;
+	margin-top:100px;
+	position:relative;
+	border-left:2px solid #21242b;
+	border-right:2px solid #21242b;
+	}
+.dlbox{
+	width:400px;
+	height:580px;
+	margin:0 auto;
+	margin-bottom:100px;
+	}
+.dltx{
+	width:180px;
+	height:180px;
+	margin:0 auto;
+	margin-bottom:10px;
+	}
+.dlbox h1{
+	height:60px;
+	line-height:60px;
+	font-weight:normal;
+	font-size:22px;
+	color:#dfe1e2;
+	}
+.dlbox input{
+	width:390px;
+	height:50px;
+	line-height:50px;
+	border:1px solid #2a2d32;
+	background:#202328;
+	border-radius:5px;
+	margin-bottom:10px;
+	outline:none;
+	color:#FFF;
+	padding-left:15px;
+	font-size:18px;
+	}
+.dlbox button{
+	width:390px;
+	height:53px;
+	line-height:53px;
+	border:none;
+	background:#6693f0;
+	text-align:center;
+	color:#FFF;
+	font-size:20px;
+	margin-bottom:15px;
+	border-radius:5px;
+	margin-top:30px;
+	}
+.dlbox p{
+	text-align:center;
+	}
+.dlbox a{
+	height:40px;
+	line-height:40px;
+	font-size:20px;
+	color:#dfe1e2;
+	text-decoration:none;
+	}
+.dlbox a:hover{
+	color:#06F;
+	}
+.zcbox{
+	width:100px;
+	height:40px;
+	line-height:40px;
+	position:absolute;
+	right:30px;
+	text-align:right;
+	}
+.zcbox a{
+	color:#FFF;
+	}
+.zcbox img{
+	float:right;
+	margin-left:10px;
+	margin-top: 13px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
