@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="./styles/style.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
 </head>
 
@@ -37,7 +46,7 @@
     <main>
     <!-- Home Section Starts Here -->
     <section class="home" id="home">
-        <div class="swiper-slide slide" style="background: url(./images/home-bg-1.jpg) no-repeat;">
+        <div class="swiper-slide slide">
             <div class="content">
                 <span>BE BETTER, </span> <span>BE SAFE!</span>
                 <h3>Keep all your passwords secured!</h3>
@@ -121,12 +130,14 @@
             <div class="credit">&copy; Created by <a href="https://github.com/Danton1/1800_202330_BBY22" target="_blank"
                     rel="noopener noreferrer"><span>BBY22</span></a> | All rights reserved!</div>
         </footer>
-
+        <footer id="footerPlaceholder"></footer>
 
         <!-- Footer Section Ends Here -->
     
     <!-- Custom JavaScript file link -->
+    <script src="./scripts/firebaseAPI_BBY22.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/skeleton.js"></script>
 </body>
 
 </html>
