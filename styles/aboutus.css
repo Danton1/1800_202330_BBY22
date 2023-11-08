@@ -31,12 +31,30 @@
     margin-right: 20px;
 }
 
+.team-member img:hover {
+    box-shadow: 0 0 10px #222;
+}
+
+.team-member p {
+    margin: 10px 10px 20px 0;
+    text-transform: none;
+}
+
 .team-member-details {
     flex-grow: 1; 
 }
 
 .social-links a {
     text-decoration: none;
-    color: black;
+    color: #0557a4;
+    margin-top: 2rem;
+    font-weight: bolder;
     margin: 10px;
+}
+.social-links a:hover {
+    color: #3595F1;
+    font-size: 2rem;
+}
+.social-links a:hover i{
+    font-size: 2.5rem;
 }
