@@ -75,11 +75,11 @@ section {
 
 .home {
   padding: 0;
-  margin-top: 5.5rem;
+  margin-top: 7.5rem;
 }
 
 .home .slide {
-  min-height: 78vh;
+  min-height: 50vh;
   background-size: cover !important;
   background-position: center !important;
   padding: 2rem 9%;
@@ -88,7 +88,7 @@ section {
 }
 
 .home .slide .content {
-  width: 60rem;
+  width: 70rem;
 }
 
 .home .slide .content span {
@@ -101,6 +101,10 @@ section {
 .home .slide .content span:first-child {
   color: #fff;
   display: inline;
+  font-size: 3rem;
+}
+.home .slide .content span#username-here {
+  color: #3595F1;
 }
 
 .home .slide .content h3 {

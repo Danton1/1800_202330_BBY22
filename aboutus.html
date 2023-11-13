@@ -27,23 +27,15 @@
 </head>
 
 <body>
-    <!-- Header Section Starts Here -->
-    <header class="header">
-        <a href="./index.html" class="logo"><img src="./images/logo.png" class="logo-img"
-                alt=""><span>Cipher</span>Safe<strong></strong></a>
-        <div id="menu-btn" class="fas fa-bars">
-        </div>
-        <nav class="navbar">
-            <a href="./index.html"><i class="fa-solid fa-house-chimney"></i> Home</a>
-            <a href="./passwordmanager.html"><i class="fa-solid fa-list"></i> Password Manager</a>
-            <a href="./passwordchecker.html"><i class="fa-solid fa-spell-check"></i> Password Checker</a>
-            <a href="#"><i class="fa-solid fa-circle-info"></i> About Us</a>
-        </nav>
+  <!-- Preloader Section Starts Here -->
+    <div class="preloader" id="preloader">
+        <img src="./images/logo.gif" alt="LOADING" class="preloader-img">
+    </div>
+  <!-- Preloader Section Ends Here -->
+  <!-- Header Section Starts Here -->
+  <header id="navbarPlaceholder"></header>
+  <!-- Header Section Ends Here -->
 
-        <style>
-        </style>
-    </header>
-    <!-- Header Section Ends Here -->
     <main>
         <!-- Main Section Starts Here -->
 
@@ -145,6 +137,7 @@
     <!-- Custom JavaScript file link -->
     <script src="./scripts/script.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/firebaseAPI_CipherSafe.js"></script>
 </body>
 
 </html>

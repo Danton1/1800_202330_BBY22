@@ -22,7 +22,7 @@
                 last_login: Date.now()
               })
               .then(() => {
-                window.location.href="index.html";
+                window.location.href="whatsnext.html";
               })
     })
   })
