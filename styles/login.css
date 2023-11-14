@@ -1,4 +1,10 @@
+body{
+  background: #101318;
+  min-height: unset;
+}
+
 main {
+  height: calc(100vh - (7rem + 100px));
 	margin: 0 auto;
 	font-size: 14px;
 	line-height: 24px;
@@ -16,20 +22,6 @@ li {
 	list-style: none;
 }
 
-a {
-	text-decoration: none;
-	color: #141515;
-}
-
-a:hover {
-	color: #1575be;
-}
-
-img {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
 .content{
 	width:1200px;
 	height:auto;
@@ -37,8 +29,6 @@ img {
 	margin:0 auto;
 	margin-top:100px;
 	position:relative;
-	border-left:2px solid #21242b;
-	border-right:2px solid #21242b;
 	}
 .dlbox{
 	width:400px;
@@ -52,6 +42,12 @@ img {
 	margin:0 auto;
 	margin-bottom:10px;
 	}
+.dltx img {
+  border: 0;
+	margin: 0;
+	padding: 0;
+  width: 100%;
+}
 .dlbox h1{
 	height:60px;
 	line-height:60px;
@@ -95,9 +91,11 @@ img {
 	color:#dfe1e2;
 	text-decoration:none;
 	}
-.dlbox a:hover{
-	color:#06F;
-	}
+.dlbox a:hover,  .zcbox a:hover{
+  color: #6693f0;
+  text-shadow: 1px 1px 3px #111;
+  font-weight: bold;
+}
 .zcbox{
 	width:100px;
 	height:40px;
@@ -108,6 +106,7 @@ img {
 	}
 .zcbox a{
 	color:#FFF;
+  font-size: 2rem;
 	}
 .zcbox img{
 	float:right;
@@ -115,19 +114,30 @@ img {
 	margin-top: 13px;
 	}
 
+@media (max-width:1280px) {
+  .content{
+    width: 90%;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 796px) {
+  main {
+    height: calc(100% - (7rem + 7rem + 100px));
+  }
+  .content{
+    width: 99%;
+  }
+  .zcbox{
+    width: unset;
+  }
+  .zcbox a{
+    font-size: 3rem;
+  }
+  .dlbox{
+    width: 86%;
+    margin-top: 5.5rem;
+  }
+  .dlbox input, .dlbox button{
+    width: 100%;
+  }
+}
