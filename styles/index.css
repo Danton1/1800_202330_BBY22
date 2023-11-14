@@ -233,10 +233,6 @@ section {
 }
 
 @media (max-width:1057px) {
-  .header {
-    padding: 0 2rem;
-  }
-
   .home aside.side-content {
     opacity: 60%;
     position: relative;
@@ -281,30 +277,6 @@ section {
 
   #menu-btn.fa-times {
     transform: rotate(180deg);
-  }
-
-  .header {
-    padding: 2rem;
-  }
-
-  .header .navbar {
-    position: absolute;
-    top: 99%;
-    right: 0;
-    left: 0;
-    background: #111;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  }
-
-  .header .navbar.active {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-
-  .header .navbar a {
-    display: block;
-    font-size: 2rem;
   }
 
   .features .box-container {

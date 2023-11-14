@@ -346,6 +346,10 @@ section {
   display: none;
 }
 
+.navbar .mobile-only{
+  display: none;
+}
+
 @media (max-width:1280px) {
   .home aside.side-content {
     right: 2%;
