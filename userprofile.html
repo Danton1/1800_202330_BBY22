@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherSafe</title>
+
+    <!-- Font-awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Custom css file link -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/userprofile.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+</head>
+
+<body>
+    <!-- Preloader Section Starts Here -->
+    <div class="preloader" id="preloader"></div>
+    <!-- Preloader Section Ends Here -->
+    <!-- Header Section Starts Here -->
+    <header class="header">
+        <a href="./index.html" class="logo"><img src="./images/logo.png" class="logo-img"
+                alt=""><span>Cipher</span>Safe<strong></strong></a>
+        <div id="menu-btn" class="fas fa-bars">
+        </div>
+        <nav class="navbar">
+            <a href="./index.html"><i class="fa-solid fa-house-chimney"></i> Home</a>
+            <a href="./passwordmanager.html"><i class="fa-solid fa-list"></i> Password Manager</a>
+            <a href="./passwordchecker.html"><i class="fa-solid fa-spell-check"></i> Password Checker</a>
+            <a href="./aboutus.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+        </nav>
+    </header>
+    <!-- Header Section Ends Here -->
+    <!-- the body of your page goes here -->
+    <div class="container">
+        <h1>User Profile </h1>
+        <form>
+            <fieldset class="mb-3" id="personalInfoFields" disabled>
+                <div class="form-group">
+                    <label>Display Name</label>
+                    <input type="text" id="displayName" class="form-control" placeholder="Enter your chosen display name">
+                </div>
+                <div class="form-group">
+                    <label>Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="location" class="form-control" placeholder="Enter your city">
+                </div>
+                <div class="form-group">
+                    <label>Password Change Frequencey</label>
+                    <select name="reminder" id="reminderFreq">
+                        <option value="7">7</option>
+                        <option value="14">14</option>
+                        <option value="30">30</option>
+                        <option value="90">90</option>
+                        <option value="180">180</option>
+                        <option value="365">365</option>
+                        <option value="730">730</option>
+                        <option value="0">Never</option>
+                    </select>
+                </div>
+            </fieldset>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+                <span style="width: 10px"></span>
+                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- our own footer goes here-->
+    <nav id="footerPlaceholder"></nav>
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script src="./scripts/firebaseAPI_CipherSafe.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/userprofile.js"></script>
+
+</body>
+
+</html>
