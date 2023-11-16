@@ -40,11 +40,11 @@
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group">
-                    <label>Display Name</label>
+                    <label>Name</label>
                     <input type="text" id="displayName" class="form-control" placeholder="Enter your chosen display name">
                 </div>
                 <div class="form-group">
-                    <label>Birthday:</label>
+                    <label>Birthday</label>
                     <input type="date" id="birthday" name="birthday">
                 </div>
                 <div class="form-group">
@@ -71,6 +71,7 @@
                 <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
             </div>
         </form>
+        <button class="btn logout" onclick="logout()">Logout</button>
     </div>
 
     <!-- our own footer goes here-->
