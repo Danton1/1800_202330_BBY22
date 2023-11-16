@@ -7,9 +7,9 @@ signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   //get user info
-    username = document.getElementById('signup_username').value;
-    email = document.getElementById('signup_email').value;
-    password = document.getElementById('signup_pwd').value;
+  username = document.getElementById('signup_username').value;
+  email = document.getElementById('signup_email').value;
+  password = document.getElementById('signup_pwd').value;
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -17,53 +17,64 @@ signupForm.addEventListener('submit', (e) => {
     return;
     // Don't continue running the code
   }
-    // sign up user
-    auth.createUserWithEmailAndPassword(email, password)
-        .then(cred => {
-            db.collection("users").doc(cred.user.uid).set({
-              displayName: username,
-              email: cred.user.email,
-              account_created: Date.now(),
-              last_login: Date.now()
-            })
-            return cred.user.updateProfile({
-              displayName: username
-            })
+  // sign up user
+  auth.createUserWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode == 'auth/weak-password') {
+        alert('The password is too weak.');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+    })
+    .then(cred => {
+      db.collection("users").doc(cred.user.uid).set({
+        displayName: username,
+        email: cred.user.email,
+        account_created: Date.now(),
+        last_login: Date.now()
+      })
+      return cred.user.updateProfile({
+        displayName: username
+      })
         .then(() => {
-          window.location.href="whatsnext.html";
+          window.location.href = "whatsnext.html";
         })
-  })
+    })
 })
 
 // Validate Functions
 function validate_email(email) {
   expression = /^[^@]+@\w+(\.\w+)+\w$/;
   if (expression.test(email) == true) {
-      // Email is good
-      return true
+    // Email is good
+    return true
   } else {
-      // Email is not good
-      return false
+    // Email is not good
+    return false
   }
 }
 
 function validate_password(password) {
   // Firebase only accepts lengths greater than 6
   if (password.length < 6) {
-      return false
+    return false
   } else {
-      return true
+    return true
   }
 }
 
 function validate_field(field) {
   if (field == null) {
-      return false
+    return false
   }
 
   if (field.length <= 0) {
-      return false
+    return false
   } else {
-      return true
+    return true
   }
 }

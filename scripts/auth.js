@@ -1,34 +1,25 @@
+
+
 let username;
 //---------------------------------------------------
-// This function loads the parts of your skeleton 
-// (navbar, footer, and other things) into html doc. 
+// This function loads template parts 
+// (navbar, footer) into html doc. 
 //---------------------------------------------------
-function loadSkeleton() {
-
-  auth.onAuthStateChanged(user => {
+auth.onAuthStateChanged(user => {
       if (user) {                   //if the pointer to "user" object is not null, then someone is logged in
-          // User is signed in.
-          // Do something for the user here.
+          // If user is signed in, load User navbar and footer
           console.log($('#navbarPlaceholder').load('./text/navbar_after_login.html'));
           console.log($('#footerPlaceholder').load('../text/footer_after_login.html'));
+          console.log("user logged in: ", user);
+          username = user.displayName;
       } else {
-          // No user is signed in.
+          // No user is signed in. Load default navbar and footer
           console.log($('#navbarPlaceholder').load('./text/navbar_before_login.html'));
           console.log($('#footerPlaceholder').load('../text/footer_before_login.html'));
+          console.log('No user is signed in');
+          username = "User";
       }
   });
-}
-loadSkeleton(); //invoke the function
-
-auth.onAuthStateChanged(user => {
-  if(user){
-    console.log("user logged in: ", user);
-    username = user.displayName;
-  } else {
-    console.log('No user is signed in');
-    username = "User";
-  }
-})
 
 const section = document.querySelector(".confirmation-modal"),
   overlay = document.querySelector(".confirmation-overlay"),
