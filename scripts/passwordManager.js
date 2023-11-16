@@ -10,6 +10,12 @@ function closeOK() {
 }
 const element = document.getElementById("saveBtn");
 
+function showInfo(){
+    document.getElementById("infoOfUser").style.display= "block";
+    document.getElementById("show").innerHTML = "Hide";
+    document.getElementById("showico").style.display = "contents";
+}
+
 function saveUsernamePassword(){
     console.log("inside saving username and password");
     let username = document.getElementById("user").value;
