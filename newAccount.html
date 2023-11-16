@@ -44,7 +44,7 @@
 
         </div>
         <div id="plus">
-            <a href="#"><i class="fa-solid fa-circle-plus fa-2xl" style="color: #fcfcfc;"></i></i></a>
+            <a href="#"><i class="fa-solid fa-circle-plus fa-2xl" style="color: #fcfcfc; " onclick="showDiv()"></i></a>
         </div>
 
         <div id="account1">
@@ -65,10 +65,10 @@
         
         <!-- Create new Account -->
 
-        <div class="newAccount">
+        <div class="newAccount" style="display: none;" id="div">
             <div class="topAccount">
                 <h1>New Account</h1>
-                <i class="fa-solid fa-xmark" style="color: #000000;" id="squareCross"></i>
+                <i class="fa-solid fa-xmark" style="color: #000000;" id="squareCross" onclick="closeDiv()"></i>
                 <!-- <i class="fa-solid fa-x" style="color: #000000;" id="squareCross"></i> -->
             </div>
             <div class="inputs">
@@ -78,12 +78,13 @@
                 <input type="button" value="Save" id="saveBtn" onclick="saveUsernamePassword()">
             </div>
         </div>
-
-
-
         <!--  -->
 
+        <!-- Confirm password is saved -->
+        <div id="saved">
 
+        </div>
+        <!--  -->
         <!-- Main Section Ends Here -->
     </main>
     <!-- Footer Section Starts Here -->
@@ -98,6 +99,8 @@
     <script src="./scripts/firebaseAPI_CipherSafe.js"></script>
     <script src="./scripts/newAccount.js"></script>
     <script src="./scripts/skeleton.js"></script>
+    <script src="./scripts/passwordManager.js"></script>
+
 </body>
 
 </html>
