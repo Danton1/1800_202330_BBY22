@@ -37,6 +37,9 @@ signupForm.addEventListener('submit', (e) => {
         account_created: Date.now(),
         last_login: Date.now()
       })
+      return cred.user.updateProfile({
+        displayName: username
+      })
         .then(() => {
           window.location.href = "whatsnext.html";
         })
