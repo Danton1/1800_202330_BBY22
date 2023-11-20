@@ -12,6 +12,8 @@ auth.onAuthStateChanged(user => {
           console.log($('#footerPlaceholder').load('../text/footer_after_login.html'));
           console.log("user logged in: ", user);
           username = user.displayName;
+          const usernamePlaceholder = document.querySelector(".username_here");
+          usernamePlaceholder.innerHTML = username;
       } else {
           // No user is signed in. Load default navbar and footer
           console.log($('#navbarPlaceholder').load('./text/navbar_before_login.html'));
