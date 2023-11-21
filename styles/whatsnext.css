@@ -92,7 +92,7 @@ section {
 }
 
 .home .slide .content span {
-  font-size: 2rem;
+  font-size: 4rem;
   color: #3595F1;
   display: inline-block;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.93);
@@ -101,17 +101,20 @@ section {
 .home .slide .content span:first-child {
   color: #fff;
   display: inline;
-  font-size: 3rem;
 }
-.home .slide .content span#username-here {
-  color: #3595F1;
+.home .slide .content span.usernameHere {
+  font-weight: bold;
 }
 
 .home .slide .content h3 {
-  font-size: 5rem;
+  font-size: 3.5rem;
   color: #fff;
   padding: 1rem 0;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.93);
+}
+
+.home .slide .content b {
+  color: #3595F1;
 }
 
 .home .slide .content p {
@@ -262,13 +265,13 @@ section {
   }
 
   .home .slide .content h3 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .home aside.side-content {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 30%;
     transform: translate(-50%, -50%);
     width: 30rem;
   }

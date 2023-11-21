@@ -3,4 +3,4 @@
 node_modules/
 .vscode/
 .gitmodules
-.firebaseAPI_CipherSafe.js
+scripts/firebaseAPI_CipherSafe.js
