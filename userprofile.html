@@ -12,6 +12,7 @@
     <!-- Custom css file link -->
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/userprofile.css">
+    <link rel="stylesheet" href="./styles/zxj.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <!-------------------------------------------------------->
@@ -26,34 +27,48 @@
 
 </head>
 
-<body>
+<body class="userProFile">
     <!-- Preloader Section Starts Here -->
     <div class="preloader" id="preloader"></div>
     <!-- Preloader Section Ends Here -->
     <!-- Header Section Starts Here -->
     <header id="navbarPlaceholder"></header>
     <!-- Header Section Ends Here -->
+    <section class="confirmation-modal">
+        <span class="confirmation-overlay"></span>
+        <div class="modal-box">
+          <i id="doorConfirm" class="fa-solid fa-door-open"></i>
+          <h2>Logout</h2>
+          <h3 id="confirmMessage">Are you sure you want to Log out?</h3>
+          <div class="buttons">
+            <button class="modal-btn close-btn">Cancel</button>
+            <button class="modal-btn" id="logoutConfirm">Logout</button>
+          </div>
+        </div>
+      </section>
     <!-- the body of your page goes here -->
     <div class="separator"></div>
-    <h1 class="heading"><span><i class="fa-solid fa-user-edit"></i> Profile</span></h1>  
+    <h1 class="heading"><span><i class="fa-solid fa-user-edit"></i> Profile</span></h1>
     <div class="container">
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
-                <div class="form-group">
+                <div class="form-group flex" style=" flex-direction: column; width: 100%; ">
                     <label>Name</label>
-                    <input type="text" id="displayName" class="form-control" placeholder="Enter your chosen display name">
+                    <input type="text" id="displayName" class=" form-control"
+                        placeholder="Enter your chosen display name" style=" width: 100%; margin-left: 0; ">
                 </div>
-                <div class="form-group">
+                <div class="form-group flex" style=" flex-direction: column; width: 100%; ">
                     <label>Birthday</label>
-                    <input type="date" id="birthday" name="birthday">
+                    <input type="date" id="birthday" name=" birthday" style=" width: 100%; margin-left: 0; ">
                 </div>
-                <div class="form-group">
+                <div class="form-group flex" style=" flex-direction: column; width: 100%; ">
                     <label>Location</label>
-                    <input type="text" id="location" class="form-control" placeholder="Enter your city">
+                    <input type="text" id="location" class=" form-control" placeholder="Enter your city"
+                        style=" width: 100%; margin-left: 0; ">
                 </div>
-                <div class="form-group">
+                <div class="form-group flex" style=" flex-direction: column; width: 100%; ">
                     <label>Password Change Frequency </label>
-                    <select name="reminder" id="reminderFreq">
+                    <select name="reminder" id="reminderFreq" style=" width: 100%; margin-left: 0; opacity: 1;">
                         <option value="7">7</option>
                         <option value="14">14</option>
                         <option value="30">30</option>
@@ -71,7 +86,7 @@
                 <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
             </div>
         </form>
-        <button class="btn logout" onclick="logout()">Logout</button>
+        <button class="btn logout" id="logoutBtn">Logout</button>
     </div>
 
     <!-- our own footer goes here-->
