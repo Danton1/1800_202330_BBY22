@@ -3,7 +3,7 @@ body{
   min-height: unset;
 }
 .heading{
-  margin-top: 16rem;
+  margin-top: 8rem;
   max-width: 50%;
   margin-inline: auto;
 }
@@ -26,6 +26,17 @@ body{
   border:0.05rem solid #3595F1;
   padding: 3rem;
   margin-bottom: 5rem;
+}
+
+.userProFile input,.userProFile select{
+  height: 45px;
+  line-height: 45px;
+background:#ffffff;
+padding:0 10px
+} 
+
+.userProFile .mb-3 { 
+background: #10355B; 
 }
 
 .form-group{
