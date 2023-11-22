@@ -1,4 +1,5 @@
 let username;
+let userpages = ["main.html", "passwordmanager.html", "userprofile.html", "whatsnext.html"]
 //---------------------------------------------------
 // This function loads template parts 
 // (navbar, footer) into html doc. 
