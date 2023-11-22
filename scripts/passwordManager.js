@@ -16,12 +16,6 @@ function showInfo() {
   document.getElementById("showico").style.display = "contents";
 }
 
-
-
-
-
-
-
 function saveUsernamePassword() {
   console.log("inside saving username and password");
   let username = document.getElementById("user").value;
@@ -31,7 +25,7 @@ function saveUsernamePassword() {
   // console.log(username,password);
 
   // Get the document for the current user.
-  db.collection("accounts").add({
+  db.collection("users").doc(auth.currentUser.uid).collection("userPass").add({
     user: username,
     passWord: password,
     websiteName: web,
@@ -63,7 +57,7 @@ function saveUsernamePassword() {
 function populatePasswordManager() {
   console.log("test");
   let managerTemplate = document.getElementById("managerTemp");
-  db.collection("accounts")
+  db.collection("users").doc(auth.currentUser.uid).collection("userPass")
     .get()
     .then((allAccounts) => {
       allAccounts.forEach(doc => {
@@ -83,5 +77,7 @@ function populatePasswordManager() {
       });
     });
 }
+
+
 
 populatePasswordManager();
