@@ -39,26 +39,27 @@ function saveUsernamePassword() {
   }).then(() => {
     document.getElementById("div").style.display = "none";
     document.getElementById("saved").style.display = "";
+    location.reload();
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var toggleButton = document.getElementById('show');
-      var content = document.getElementById('infoOfUser');
-
-      // Add click event listener to the button
-      toggleButton.addEventListener('click', function () {
-        // Toggle the visibility of the content
-        if (content.style.display === 'none') {
-          content.style.display = 'block';
-          toggleButton.innerText = 'Hide';
-        } else {
-          content.style.display = 'none';
-          toggleButton.innerText = 'Show';
-        }
-      });
-    });
+   
   })
 }
+document.addEventListener('DOMContentLoaded', function () {
+  var toggleButton = document.getElementById('show');
+  var content = document.getElementById('infoOfUser');
 
+  // Add click event listener to the button
+  toggleButton.addEventListener('click', function () {
+    // Toggle the visibility of the content
+    if (content.style.display === 'none') {
+      content.style.display = 'block';
+      toggleButton.innerText = 'Hide';
+    } else {
+      content.style.display = 'none';
+      toggleButton.innerText = 'Show';
+    }
+  });
+});
 
 function populatePasswordManager() {
   console.log("test");
@@ -78,7 +79,7 @@ function populatePasswordManager() {
 
         managerCard.querySelector("#username").innerHTML = username;
         managerCard.querySelector("#pass").innerHTML = password;
-        managerCard.querySelector("#website").innerHTML = password;
+        managerCard.querySelector("#website").innerHTML = web;
         document.getElementById("container").append(managerCard);
       });
     });
