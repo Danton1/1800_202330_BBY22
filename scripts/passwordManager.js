@@ -15,6 +15,35 @@ function showInfo() {
 
   document.getElementById("showico").style.display = "contents";
 }
+let userID;
+auth.onAuthStateChanged(user => {
+  if (user) {
+    userID = user.uid;
+    console.log("test");
+    let managerTemplate = document.getElementById("managerTemp");
+    db.collection("users").doc(auth.currentUser.uid).collection("userPass")
+      .get()
+      .then((allAccounts) => {
+        allAccounts.forEach(doc => {
+          var username = doc.data().user;
+          var password = doc.data().passWord;
+          var web = doc.data().websiteName;
+          console.log(username);
+          console.log(password)
+          console.log(web);
+
+          let managerCard = managerTemplate.content.cloneNode(true);
+
+          managerCard.querySelector("#username").innerHTML = username;
+          managerCard.querySelector("#pass").innerHTML = password;
+          managerCard.querySelector("#website").innerHTML = web;
+          document.getElementById("container").append(managerCard);
+        });
+      });
+  } else {
+    window.location.href = "authlogin.html";
+  }
+})
 
 function saveUsernamePassword() {
   console.log("inside saving username and password");
@@ -23,9 +52,8 @@ function saveUsernamePassword() {
   let web = document.getElementById("websiteName").value;
 
   // console.log(username,password);
-
   // Get the document for the current user.
-  db.collection("users").doc(auth.currentUser.uid).collection("userPass").add({
+  db.collection("users").doc(userID).collection("userPass").add({
     user: username,
     passWord: password,
     websiteName: web,
@@ -54,30 +82,3 @@ function saveUsernamePassword() {
 }
 
 
-function populatePasswordManager() {
-  console.log("test");
-  let managerTemplate = document.getElementById("managerTemp");
-  db.collection("users").doc(auth.currentUser.uid).collection("userPass")
-    .get()
-    .then((allAccounts) => {
-      allAccounts.forEach(doc => {
-        var username = doc.data().user;
-        var password = doc.data().passWord;
-        var web = doc.data().websiteName;
-        console.log(username);
-        console.log(password)
-        console.log(web);
-
-        let managerCard = managerTemplate.content.cloneNode(true);
-
-        managerCard.querySelector("#username").innerHTML = username;
-        managerCard.querySelector("#pass").innerHTML = password;
-        managerCard.querySelector("#website").innerHTML = password;
-        document.getElementById("container").append(managerCard);
-      });
-    });
-}
-
-
-
-populatePasswordManager();
