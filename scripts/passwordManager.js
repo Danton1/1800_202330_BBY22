@@ -35,13 +35,9 @@ auth.onAuthStateChanged(user => {
           console.log(docID);
           managerCard.querySelector("#username").innerHTML = username;
           managerCard.querySelector("#pass").innerHTML = password;
-<<<<<<< HEAD
           managerCard.querySelector("#account").innerHTML = web;
-=======
-          managerCard.querySelector("#website").innerHTML = web;
           managerCard.querySelector('.showButton').id = docID;
           managerCard.querySelector('.bottom').id = infoID;
->>>>>>> e0c938236eda5bda8b1abd1baf55dcb7310f87bc
           document.getElementById("container").append(managerCard);
           showButton(docID, infoID);
         });
