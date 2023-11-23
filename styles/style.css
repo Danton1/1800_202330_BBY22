@@ -492,6 +492,9 @@ section.active .modal-box {
   #menu-btn {
     display: inline-block;
   }
+  .credit {
+    display: none;
+  }
 
   #menu-btn.fa-times {
     transform: rotate(180deg);
