@@ -29,11 +29,16 @@ auth.onAuthStateChanged(user => {
           var password = doc.data().passWord;
           var web = doc.data().websiteName;
           let managerCard = managerTemplate.content.cloneNode(true);
-
+          var docID = doc.id;
+          var infoID = "info" + docID;
+          console.log(docID);
           managerCard.querySelector("#username").innerHTML = username;
           managerCard.querySelector("#pass").innerHTML = password;
           managerCard.querySelector("#website").innerHTML = web;
+          managerCard.querySelector('.showButton').id = docID;
+          managerCard.querySelector('.bottom').id = infoID;
           document.getElementById("container").append(managerCard);
+          showButton(docID, infoID);
         });
       });
   } else {
@@ -58,9 +63,12 @@ function saveUsernamePassword() {
     location.reload();
   })
 }
-document.addEventListener('DOMContentLoaded', function () {
-  var toggleButton = document.getElementById('show');
-  var content = document.getElementById('infoOfUser');
+
+function showButton(id, infoID){
+// document.addEventListener('DOMContentLoaded', function () {
+  console.log("Inside save");
+  var toggleButton = document.getElementById(id);
+  var content = document.getElementById(infoID);
 
   
   toggleButton.addEventListener('click', function () {
@@ -71,26 +79,27 @@ document.addEventListener('DOMContentLoaded', function () {
       content.style.display = 'none';
       toggleButton.innerText = 'Show';
     }
-  });
-});
-
-function populatePasswordManager() {
-  console.log("test");
-  let managerTemplate = document.getElementById("managerTemp");
-  db.collection("users").doc(auth.currentUser.uid).collection("userPass")
-    .get()
-    .then((allAccounts) => {
-      allAccounts.forEach(doc => {
-        var username = doc.data().user;
-        var password = doc.data().passWord;
-        var web = doc.data().websiteName;
-
-        let managerCard = managerTemplate.content.cloneNode(true);
-
-        managerCard.querySelector("#username").innerHTML = username;
-        managerCard.querySelector("#pass").innerHTML = password;
-        managerCard.querySelector("#website").innerHTML = web;
-        document.getElementById("container").append(managerCard);
-      });
-    });
+   });
+// });
 }
+
+// function populatePasswordManager() {
+//   console.log("test");
+//   let managerTemplate = document.getElementById("managerTemp");
+//   db.collection("users").doc(auth.currentUser.uid).collection("userPass")
+//     .get()
+//     .then((allAccounts) => {
+//       allAccounts.forEach(doc => {
+//         var username = doc.data().user;
+//         var password = doc.data().passWord;
+//         var web = doc.data().websiteName;
+
+//         let managerCard = managerTemplate.content.cloneNode(true);
+
+//         managerCard.querySelector("#username").innerHTML = username;
+//         managerCard.querySelector("#pass").innerHTML = password;
+//         managerCard.querySelector("#website").innerHTML = web;
+//         document.getElementById("container").append(managerCard);
+//       });
+//     });
+// }
