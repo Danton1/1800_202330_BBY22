@@ -28,10 +28,6 @@ auth.onAuthStateChanged(user => {
           var username = doc.data().user;
           var password = doc.data().passWord;
           var web = doc.data().websiteName;
-          console.log(username);
-          console.log(password)
-          console.log(web);
-
           let managerCard = managerTemplate.content.cloneNode(true);
 
           managerCard.querySelector("#username").innerHTML = username;
@@ -51,8 +47,6 @@ function saveUsernamePassword() {
   let password = document.getElementById("passWord").value;
   let web = document.getElementById("websiteName").value;
 
-  // console.log(username,password);
-  // Get the document for the current user.
   db.collection("users").doc(userID).collection("userPass").add({
     user: username,
     passWord: password,
@@ -62,17 +56,14 @@ function saveUsernamePassword() {
     document.getElementById("div").style.display = "none";
     document.getElementById("saved").style.display = "";
     location.reload();
-
-   
   })
 }
 document.addEventListener('DOMContentLoaded', function () {
   var toggleButton = document.getElementById('show');
   var content = document.getElementById('infoOfUser');
 
-  // Add click event listener to the button
+  
   toggleButton.addEventListener('click', function () {
-    // Toggle the visibility of the content
     if (content.style.display === 'none') {
       content.style.display = 'block';
       toggleButton.innerText = 'Hide';
@@ -93,9 +84,6 @@ function populatePasswordManager() {
         var username = doc.data().user;
         var password = doc.data().passWord;
         var web = doc.data().websiteName;
-        console.log(username);
-        console.log(password)
-        console.log(web);
 
         let managerCard = managerTemplate.content.cloneNode(true);
 
@@ -106,5 +94,3 @@ function populatePasswordManager() {
       });
     });
 }
-
-populatePasswordManager();
