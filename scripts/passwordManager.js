@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function populatePasswordManager() {
   console.log("test");
   let managerTemplate = document.getElementById("managerTemp");
-  db.collection("accounts")
+  db.collection("users").doc(auth.currentUser.uid).collection("userPass")
     .get()
     .then((allAccounts) => {
       allAccounts.forEach(doc => {
