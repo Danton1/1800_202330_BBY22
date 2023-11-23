@@ -20,8 +20,6 @@ auth.onAuthStateChanged(user => {
             }
           })
         })
-      console.log(Date.now());
-      console.log(str);
     })
   } else {
     window.location.href = "authlogin.html";
