@@ -7,6 +7,7 @@ function closeDiv() {
 
 function closeOK() {
   document.getElementById("saved").style.display = "none";
+  window.location.reload();
 }
 const element = document.getElementById("saveBtn");
 
@@ -36,7 +37,7 @@ auth.onAuthStateChanged(user => {
 
           managerCard.querySelector("#username").innerHTML = username;
           managerCard.querySelector("#pass").innerHTML = password;
-          managerCard.querySelector("#website").innerHTML = web;
+          managerCard.querySelector("#account").innerHTML = web;
           document.getElementById("container").append(managerCard);
         });
       });
