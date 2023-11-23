@@ -1,3 +1,8 @@
+
+if(document.getElementById('personalInfoFields').disabled){
+  document.getElementById("personalInfoFields").classList.add('form-disabled');
+}
+
 var currentUser;               //points to the document of the user who is logged in
 function populateUserInfo() {
   firebase.auth().onAuthStateChanged(user => {
@@ -14,10 +19,13 @@ function populateUserInfo() {
           var userBirthday = userDoc.data().birthday;
           var userLocation = userDoc.data().location;
           var userReminder = userDoc.data().reminderFreq;
-
+          
           //if the data fields are not empty, then write them in to the form.
           if (userName != null) {
             document.getElementById("displayName").value = userName;
+            user.updateProfile({
+              displayName: username
+            })
           }
           if (userBirthday != null) {
             document.getElementById("birthday").value = userBirthday;
@@ -41,6 +49,8 @@ populateUserInfo();
 
 function editUserInfo() {
   //Enable the form fields
+  document.getElementById("personalInfoFields").classList.remove('form-disabled');
+  document.getElementById("userIcon").classList.replace("fa-user-shield", "fa-user-edit");
   document.getElementById('personalInfoFields').disabled = false;
 }
 
@@ -62,6 +72,10 @@ function saveUserInfo() {
     .then(() => {
       console.log("Document successfully updated!");
     })
-  //c) disable edit 
+  //c) disable edit
+  document.getElementById("personalInfoFields").classList.add('form-disabled');
   document.getElementById('personalInfoFields').disabled = true;
+  document.getElementById("userIcon").classList.replace("fa-user-edit", "fa-user-check").then(setTimeout(() => {
+    document.getElementById("userIcon").classList.replace("fa-user-check", "fa-user-shield")
+  }, 1000))
 }

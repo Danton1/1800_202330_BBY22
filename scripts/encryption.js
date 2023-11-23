@@ -62,16 +62,3 @@ async function checkPassword(password) {
   }
 }
 
-// const passwordToCheck = "Damage123";
-// let checked = checkPassword(passwordToCheck);
-// console.log(checked)
-// checked.then(a => console.log(a))
-
-async function main() {
-  const passwordToCheck = "Damage123";
-  let checked = await checkPassword(passwordToCheck);
-  console.log(checked);
-}
-
-main();
-
