@@ -1,6 +1,7 @@
 function showDiv() {
   document.getElementById("div").style.display = "";
 }
+
 function closeDiv() {
   document.getElementById("div").style.display = "none";
 }
@@ -66,7 +67,6 @@ function saveUsernamePassword() {
 }
 
 function showButton(id, infoID){
-// document.addEventListener('DOMContentLoaded', function () {
   console.log("Inside save");
   var toggleButton = document.getElementById(id);
   var content = document.getElementById(infoID);
@@ -81,26 +81,4 @@ function showButton(id, infoID){
       toggleButton.innerText = 'Show';
     }
    });
-// });
 }
-
-// function populatePasswordManager() {
-//   console.log("test");
-//   let managerTemplate = document.getElementById("managerTemp");
-//   db.collection("users").doc(auth.currentUser.uid).collection("userPass")
-//     .get()
-//     .then((allAccounts) => {
-//       allAccounts.forEach(doc => {
-//         var username = doc.data().user;
-//         var password = doc.data().passWord;
-//         var web = doc.data().websiteName;
-
-//         let managerCard = managerTemplate.content.cloneNode(true);
-
-//         managerCard.querySelector("#username").innerHTML = username;
-//         managerCard.querySelector("#pass").innerHTML = password;
-//         managerCard.querySelector("#website").innerHTML = web;
-//         document.getElementById("container").append(managerCard);
-//       });
-//     });
-// }
