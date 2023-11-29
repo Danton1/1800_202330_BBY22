@@ -16,6 +16,20 @@ function showInfo() {
 
   document.getElementById("showico").style.display = "contents";
 }
+
+function cancel() {
+  document.getElementById("removeDiv").style.display = "none";
+}
+
+function showDialog() {
+  var toggleButton = document.getElementById("removeButton");
+  var content = document.getElementById("removeDiv");
+  toggleButton.addEventListener('click', function () {
+    content.style.display = '';
+
+  });
+}
+
 let userID;
 auth.onAuthStateChanged(user => {
   if (user) {
@@ -32,14 +46,23 @@ auth.onAuthStateChanged(user => {
           let managerCard = managerTemplate.content.cloneNode(true);
           var docID = doc.id;
           var infoID = "info" + docID;
+          var removeID = "removed" + docID;
+          var topID = 'top' + docID;
+
           console.log(docID);
+          console.log(userID);
           managerCard.querySelector("#username").innerHTML = username;
           managerCard.querySelector("#pass").innerHTML = password;
           managerCard.querySelector("#account").innerHTML = web;
           managerCard.querySelector('.showButton').id = docID;
+          // managerCard.querySelector('.deleteBtn').id = removeID;
+          managerCard.querySelector('.remove').id = removeID;
           managerCard.querySelector('.bottom').id = infoID;
+          managerCard.querySelector('.top').id = topID;
           document.getElementById("container").append(managerCard);
           showButton(docID, infoID);
+          remove(removeID, topID, infoID, docID, userID);
+          // showDialog(removeID);
         });
       });
   } else {
@@ -65,13 +88,12 @@ function saveUsernamePassword() {
   })
 }
 
-function showButton(id, infoID){
-// document.addEventListener('DOMContentLoaded', function () {
-  console.log("Inside save");
+function showButton(id, infoID) {
+  console.log("Inside show");
   var toggleButton = document.getElementById(id);
   var content = document.getElementById(infoID);
 
-  
+
   toggleButton.addEventListener('click', function () {
     if (content.style.display === 'none') {
       content.style.display = 'block';
@@ -80,27 +102,26 @@ function showButton(id, infoID){
       content.style.display = 'none';
       toggleButton.innerText = 'Show';
     }
-   });
-// });
+  });
 }
 
-// function populatePasswordManager() {
-//   console.log("test");
-//   let managerTemplate = document.getElementById("managerTemp");
-//   db.collection("users").doc(auth.currentUser.uid).collection("userPass")
-//     .get()
-//     .then((allAccounts) => {
-//       allAccounts.forEach(doc => {
-//         var username = doc.data().user;
-//         var password = doc.data().passWord;
-//         var web = doc.data().websiteName;
+function remove(id, topID, infoID, docID, userID) {
+  console.log("inside remove");
+ 
+  var toggleButton = document.getElementById(id);
+  var content = document.getElementById(infoID);
+  var content2 = document.getElementById(topID);
+  toggleButton.addEventListener('click', function () {
+    // alert ("Do you really wanna delete it?");
+    content.style.display = 'none';
+    content2.style.display = 'none';
+    console.log("doc id" + docID);
+    db.collection("users").doc(userID).collection("userPass").doc(docID).delete().then(() => {
+      console.log("Password successfully deleted!");
+      document.getElementById("removeDiv").style.display = 'none';
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
 
-//         let managerCard = managerTemplate.content.cloneNode(true);
-
-//         managerCard.querySelector("#username").innerHTML = username;
-//         managerCard.querySelector("#pass").innerHTML = password;
-//         managerCard.querySelector("#website").innerHTML = web;
-//         document.getElementById("container").append(managerCard);
-//       });
-//     });
-// }
+  });
+}
