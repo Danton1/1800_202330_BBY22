@@ -125,13 +125,158 @@ li {
 	margin-top: 13px;
 	}
 
+
+
+
+
+
+.flex{
+	display:flex
+}
+
+.userProFile input,.userProFile select{
+	    height: 45px;
+	    line-height: 45px;
+	background:#ffffff;
+	padding:0 10px
+}
+.flex-1{
+	flex:1
+}
+
+.userProFile .mb-3 {
+   
+    background: #10355B;
+   
+}
+.inputs input{
+	height: 45px!important; width: 100%!important; margin-left: 0!important;
+}
+#squareCross{
+	position: absolute!important;top: 0px; right: 10px;
+}
+#saveBtn{ 
+	    padding: 1rem 5rem;
+	    border: 0.05rem solid #3595F1;
+	    background: transparent;
+	    color: #3595F1;
+	    transition: all .5s;
+	    font-size: 2rem;
+}
+#saveBtn:hover{ 
+	    background-color: #3595F1;
+		  color: #ffffff;
+}
+.zxj_a10{
+	width: 100%; margin-left: 0;
+}
+.zxj_a11{
+	 flex-direction: column; width: 100%;
+}
+.zxj_a12{
+	 width: 100%; margin-left: 0;
+}
+.zxj_a13{
+	flex-direction: column; width: 100%;
+}
+.zxj_a14{
+	flex-direction: column; width: 100%;
+}
+.zxj_a15{
+	 width: 100%; margin-left: 0; opacity: 1;
+}
+.zxj_a16{
+	width: 100%; margin-left: 0; 
+}
+
+.zxj_a17{
+	color: #ffffff;
+}
+.zxj_a18{
+	color: #fcfcfc;
+} 
+.zxj_a19{
+	margin-bottom: 2%;
+}
+.zxj_a20{
+	color: #000000;
+}
+.zxj_a21{
+	background: rgba(16,53,91,.5); color: #ffffff; padding: 40px; width: 500px; height: 400px; position: fixed; top: 0; bottom: 0; left: 0; right: 0; margin: auto; 
+}
+.zxj_a22{
+	color: #000000;
+}
+.zxj_a23{
+	position: fixed; bottom: 0; width: 100%; 
+}
+
+
+.zxj_eiak{
+	flex-direction: column; width: 100%;
+}
+
+	
+	.userProFile input,.userProFile select{
+		    height: 45px;
+		    line-height: 45px;
+		background:#ffffff;
+		padding:0 10px
+	} 
+	
+	.userProFile .mb-3 { 
+	    background: #10355B; 
+	}
+	
+	body{
+		background: linear-gradient(rgba(0, 44, 101, 0.25), rgba(0, 44, 101, 0.25)), url(../images/wp8623049.webp) no-repeat;
+		    background-size: cover;
+		    min-height: 100vh;
+	}
+	main{
+		background:none
+	}
+	#submit{
+		    padding: 1rem 5rem;
+		    border: 0.05rem solid #3595F1;
+		    background: transparent;
+		    color: #3595F1;
+		    transition: all .5s;
+		    font-size: 2rem;
+			line-height: unset;
+	}
+	#submit:hover{ 
+		    background-color: #3595F1;
+			  color: #ffffff;
+	}
+	.dlbox input {
+	    width: 390px;
+	    height: 50px;
+	    line-height: 50px;
+	    border: 1px solid #3595F1;
+	    background: #3595F1;
+	    border-radius: 5px;
+	    margin-bottom: 10px;
+	    outline: none;
+	    color: #FFF;
+	    padding-left: 15px;
+	    font-size: 18px;
+	}
+
+
+
+
+
 @media (max-width:1280px) {
   .content{
     width: 90%;
   }
 }
-
-@media (max-width: 796px) {
+	@media (max-width: 796px){
+	.dlbox input{
+		    width: 100%!important;
+	}
+ 
   main {
     height: calc(100% - (7rem + 7rem + 100px));
   }
@@ -152,3 +297,5 @@ li {
     width: 100%;
   }
 }
+
+
