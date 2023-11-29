@@ -21,14 +21,14 @@ function cancel() {
   document.getElementById("removeDiv").style.display = "none";
 }
 
-function showDialog() {
-  var toggleButton = document.getElementById("removeButton");
-  var content = document.getElementById("removeDiv");
-  toggleButton.addEventListener('click', function () {
-    content.style.display = '';
+// function showDialog() {
+//   var toggleButton = document.getElementById("removeButton");
+//   var content = document.getElementById("removeDiv");
+//   toggleButton.addEventListener('click', function () {
+//     content.style.display = '';
 
-  });
-}
+//   });
+// }
 
 let userID;
 auth.onAuthStateChanged(user => {
