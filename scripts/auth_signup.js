@@ -31,15 +31,16 @@ signupForm.addEventListener('submit', (e) => {
       console.log(error);
     })
     .then(cred => {
+      cred.user.updateProfile({
+        displayName: username
+      })
       db.collection("users").doc(cred.user.uid).set({
         displayName: username,
         email: cred.user.email,
         account_created: Date.now(),
         last_login: Date.now()
       })
-      return cred.user.updateProfile({
-        displayName: username
-      })
+      
         .then(() => {
           window.location.href = "whatsnext.html";
         })

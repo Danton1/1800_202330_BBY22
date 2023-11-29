@@ -47,12 +47,13 @@
         </div>
     </section>
     <!-- the body of your page goes here -->
-    <h1 class="heading"><span><i class="fa-solid fa-user-edit"></i> Profile</span></h1>
+    <div class="separator"></div>
+    <h1 class="heading"><span><i class="fa-solid fa-user-shield" id="userIcon"></i> Profile</span></h1>
     <div class="container">
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group flex" style=" flex-direction: column; width: 100%; ">
-                    <label>Name</label>
+                    <label>Username</label>
                     <input type="text" id="displayName" class=" form-control"
                         placeholder="Enter your chosen display name" style=" width: 100%; margin-left: 0; ">
                 </div>
@@ -80,19 +81,19 @@
                 </div>
             </fieldset>
             <div class="d-flex button-wrap">
-                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+                <button type="button" class="btn btn-secondary" onclick="editUserInfo()"><i class="fa-solid fa-user-edit"></i> Edit</button>
                 <span style="width: 10px"></span>
-                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+                <button type="button" class="btn btn-info" onclick="saveUserInfo()"><i class="fa-solid fa-check" id="userIcon"></i> Save</button>
             </div>
         </form>
-        <button class="btn logout" id="logoutBtn">Logout</button>
+        <button class="btn logout" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
     </div>
 
     <!-- our own footer goes here-->
-    <footer>
+    <!-- <footer>
         <div class="credit">&copy; Created by <a href="https://github.com/Danton1/1800_202330_BBY22" target="_blank"
                 rel="noopener noreferrer"><span>BBY22</span></a> | All rights reserved!</div>
-    </footer>
+    </footer> -->
     <footer id="footerPlaceholder"></footer>
 
     <!---------------------------------------------->
