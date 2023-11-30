@@ -92,7 +92,7 @@ section {
 }
 
 .home .slide .content span {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #3595F1;
   display: inline-block;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.93);
@@ -106,6 +106,13 @@ section {
 .home .slide .content h3 {
   font-size: 5rem;
   color: #fff;
+  padding: 1rem 0;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.93);
+}
+
+.home .slide .content h3 #usernameHere {
+  font-size: 5rem;
+  color: #3595F1;
   padding: 1rem 0;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.93);
 }
@@ -250,6 +257,7 @@ section {
   }
 
   .home .slide {
+    min-height: 60vh;
     padding: 2rem 5%;
   }
 
@@ -264,7 +272,7 @@ section {
   .home aside.side-content {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 35%;
     transform: translate(-50%, -50%);
     width: 30rem;
   }

@@ -54,7 +54,6 @@ let userID;
 auth.onAuthStateChanged(user => {
   if (user) {
     userID = user.uid;
-    console.log("test");
     let managerTemplate = document.getElementById("managerTemp");
     db.collection("users").doc(auth.currentUser.uid).collection("userPass")
       .get()
@@ -68,21 +67,16 @@ auth.onAuthStateChanged(user => {
           var infoID = "info" + docID;
           var removeID = "removed" + docID;
           var topID = 'top' + docID;
-
-          console.log(docID);
-          console.log(userID);
           managerCard.querySelector("#username").innerHTML = username;
           managerCard.querySelector("#pass").innerHTML = password;
           managerCard.querySelector("#account").innerHTML = web;
           managerCard.querySelector('.showButton').id = docID;
-          // managerCard.querySelector('.deleteBtn').id = removeID;
           managerCard.querySelector('.remove').id = removeID;
           managerCard.querySelector('.bottom').id = infoID;
           managerCard.querySelector('.top').id = topID;
           document.getElementById("container").append(managerCard);
           showButton(docID, infoID);
           remove(removeID, topID, infoID, docID, userID);
-          // showDialog(removeID);
         });
       });
   } else {
@@ -91,7 +85,6 @@ auth.onAuthStateChanged(user => {
 })
 
 async function saveUsernamePassword() {
-  console.log("inside saving username and password");
   let username = document.getElementById("user").value;
   let password = document.getElementById("passWord").value;
   let encryptedPass = await encryptPassword(password);
@@ -106,11 +99,11 @@ async function saveUsernamePassword() {
     document.getElementById("div").style.display = "none";
     document.getElementById("saved").style.display = "";
     location.reload();
+    console.log("New password saved");
   })
 }
 
 function showButton(id, infoID) {
-  console.log("Inside show");
   var toggleButton = document.getElementById(id);
   var content = document.getElementById(infoID);
 
@@ -129,9 +122,7 @@ function showButton(id, infoID) {
   });
 }
 
-function remove(id, topID, infoID, docID, userID) {
-  console.log("inside remove");
- 
+function remove(id, topID, infoID, docID, userID) { 
   var toggleButton = document.getElementById(id);
   var content = document.getElementById(infoID);
   var content2 = document.getElementById(topID);
