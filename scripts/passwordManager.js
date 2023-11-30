@@ -1,16 +1,16 @@
-async function getPassKey(){
+async function getPassKey() {
   const userDoc = await db.collection("users").doc(auth.currentUser.uid).get();
   let passKey = userDoc.data().account_created;
-    return passKey.toString();
+  return passKey.toString();
 }
 
-async function encryptPassword(password){
+async function encryptPassword(password) {
   const passKey = await getPassKey();
   let encryptedpassword = CryptoJS.AES.encrypt(password, passKey);
   return encryptedpassword.toString();
 }
 
-async function decryptPassword(encryptedpassword){
+async function decryptPassword(encryptedpassword) {
   const passKey = await getPassKey();
   let password = CryptoJS.AES.decrypt(encryptedpassword, passKey);
   return password.toString(CryptoJS.enc.Utf8);
@@ -69,6 +69,10 @@ auth.onAuthStateChanged(user => {
           var removeID = "removed" + docID;
           var topID = 'top' + docID;
 
+          var editID = "edit" + docID;
+          var saveID = "save" + docID;
+          var newPassID = 'newPass' + docID;
+
           console.log(docID);
           console.log(userID);
           managerCard.querySelector("#username").innerHTML = username;
@@ -79,10 +83,14 @@ auth.onAuthStateChanged(user => {
           managerCard.querySelector('.remove').id = removeID;
           managerCard.querySelector('.bottom').id = infoID;
           managerCard.querySelector('.top').id = topID;
+          managerCard.querySelector('.newPassword').id = newPassID;
+          managerCard.querySelector('.editBtn').id = editID;
+          managerCard.querySelector('.saveBtn').id = saveID;
           document.getElementById("container").append(managerCard);
           showButton(docID, infoID);
           remove(removeID, topID, infoID, docID, userID);
           // showDialog(removeID);
+          edit(editID, saveID, newPassID, docID);
         });
       });
   } else {
@@ -131,7 +139,7 @@ function showButton(id, infoID) {
 
 function remove(id, topID, infoID, docID, userID) {
   console.log("inside remove");
- 
+
   var toggleButton = document.getElementById(id);
   var content = document.getElementById(infoID);
   var content2 = document.getElementById(topID);
@@ -148,4 +156,50 @@ function remove(id, topID, infoID, docID, userID) {
     });
 
   });
+}
+
+function edit(id, saveID, newPassID) {
+  console.log("inside edit");
+  var editButton = document.getElementById(id);
+  var newPass = document.getElementById(newPassID);
+  var newSave = document.getElementById(saveID);
+  editButton.addEventListener('click', function () {
+    newPass.style.display = 'block';
+    newSave.style.display = 'block';
+  });
+}
+
+async function saveNewPassword() {
+  console.log("inside save");
+  let managerTemplate = document.getElementById("managerTemp");
+  db.collection("users").doc(auth.currentUser.uid).collection("userPass")
+    .get()
+    .then((allAccounts) => {
+      allAccounts.forEach(doc => {
+        let managerCard = managerTemplate.content.cloneNode(true);
+        var docID = doc.id;
+        var newPassID = 'newPass' + docID;
+
+        managerCard.querySelector('.newPassword').id = newPassID;
+        var saveButton = document.getElementById(docID);
+        var newPass = document.getElementById(newPassID).value;
+        console.log(newPass);
+        encryptPassword(newPass).then((encryptedPass) => {
+          console.log(encryptedPass);
+          console.log("Save clicked");
+          db.collection("users").doc(userID).collection("userPass").doc(docID).update({
+            passWord: encryptedPass,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+          }).then(() => {
+            console.log("New password updated!");
+            //newPass.style.display = 'none';
+          }).catch((error) => {
+            console.error("Error updating document: ", error);
+          });
+        })
+
+      });
+
+    });
+
 }
