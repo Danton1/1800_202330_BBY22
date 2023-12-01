@@ -440,6 +440,45 @@ section.active .modal-box {
   margin: 0 10px;
 }
 
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 30rem;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 25%;
+  margin-left: -140px;
+  font-size: 1.8rem;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
 @media (max-width:1280px) {
   .home aside.side-content {
     right: 2%;
@@ -491,9 +530,6 @@ section.active .modal-box {
 @media (max-width: 796px) {
   #menu-btn {
     display: inline-block;
-  }
-  .credit {
-    display: none;
   }
 
   #menu-btn.fa-times {

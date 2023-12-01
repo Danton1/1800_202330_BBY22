@@ -68,7 +68,7 @@ li {
 	padding-left:15px;
 	font-size:18px;
 	}
-.dlbox input:focus{
+.dlbox input:focus, .dlbox input:not(:placeholder-shown){
   box-shadow: 0 0 5px 0px #000;
   background: rgb(51, 58, 69)
   }
@@ -228,11 +228,7 @@ li {
 	    background: #10355B; 
 	}
 	
-	body{
-		background: linear-gradient(rgba(0, 44, 101, 0.25), rgba(0, 44, 101, 0.25)), url(../images/wp8623049.webp) no-repeat;
-		    background-size: cover;
-		    min-height: 100vh;
-	}
+
 	main{
 		background:none
 	}
@@ -245,16 +241,18 @@ li {
 		    font-size: 2rem;
 			line-height: unset;
 	}
-	#submit:hover{ 
+	#submit:hover, #submit:focus{ 
+				cursor: pointer;
 		    background-color: #3595F1;
 			  color: #ffffff;
+				box-shadow: 0 0 8px 1px #000;
 	}
 	.dlbox input {
 	    width: 390px;
 	    height: 50px;
 	    line-height: 50px;
 	    border: 1px solid #3595F1;
-	    background: #3595F1;
+	    background: #3596f17f;
 	    border-radius: 5px;
 	    margin-bottom: 10px;
 	    outline: none;

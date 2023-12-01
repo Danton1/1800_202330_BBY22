@@ -41,14 +41,26 @@ function cancel() {
   document.getElementById("removeDiv").style.display = "none";
 }
 
-// function showDialog() {
-//   var toggleButton = document.getElementById("removeButton");
-//   var content = document.getElementById("removeDiv");
-//   toggleButton.addEventListener('click', function () {
-//     content.style.display = '';
+// Function to get the icon content based on app name
+function getAppIconContent(appName) {
+  // Check if the app name exists in the accountIcons variable
+  if (accountIcons[appName]) {
+    return accountIcons[appName];
+  } else {
+    // Use a default value if the app name is not found
+    return "fa-regular fa-id-badge";
+  }
+}
 
-//   });
-// }
+//Function to copy text to the clipboard
+async function copyContent(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log('Content copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
 
 let userID;
 auth.onAuthStateChanged(user => {
@@ -62,6 +74,10 @@ auth.onAuthStateChanged(user => {
           var username = doc.data().user;
           var password = doc.data().passWord;
           var web = doc.data().websiteName;
+
+          // Get the icon content based on the app name
+          var iconContent = getAppIconContent(web.toLowerCase().replace(/[- /.]/g, ""));
+
           let managerCard = managerTemplate.content.cloneNode(true);
           var docID = doc.id;
           var infoID = "info" + docID;
@@ -69,7 +85,11 @@ auth.onAuthStateChanged(user => {
           var topID = 'top' + docID;
           managerCard.querySelector("#username").innerHTML = username;
           managerCard.querySelector("#pass").innerHTML = password;
-          managerCard.querySelector("#account").innerHTML = web;
+
+          // Set the icon content
+          managerCard.querySelector("#accountIcon").classList = iconContent;
+
+          managerCard.querySelector("#account").innerHTML = " "+web;
           managerCard.querySelector('.showButton').id = docID;
           managerCard.querySelector('.remove').id = removeID;
           managerCard.querySelector('.bottom').id = infoID;
