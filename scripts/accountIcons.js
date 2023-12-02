@@ -231,6 +231,7 @@ const accountIcons = {
       "chatgpt": "fa-solid fa-robot",
       "creditcard": "fa-solid fa-credit-card",
       "roll20": "fa-solid fa-dice-d20",
+      "reddit": "fa-brands fa-reddit",
 
       //These need testing
 

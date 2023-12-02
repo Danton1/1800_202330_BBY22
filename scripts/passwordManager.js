@@ -137,7 +137,7 @@ function showButton(id, infoID) {
 
 
   toggleButton.addEventListener('click', async function () {
-    let password = document.querySelector(`#${infoID} > #pass`);
+    let password = document.querySelector(`#${infoID} #pass`);
     if (content.style.display === 'none') {
       password.innerHTML = await decryptPassword(password.innerText);
       content.style.display = 'block';
