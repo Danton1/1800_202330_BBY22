@@ -105,7 +105,8 @@ It has the following subfolders and files:
     /style.css          
     /userprofile.css    
     /whatsnext.css   
-├── styles                   # Folder for html snippets that load asynchronously based on user authentication
+├── text                   # Folder for html snippets that load asynchronously,
+                           # based on user authentication
     /footer_after_login.html
     /footer_before_login.html
     /logout-confirmation-modal.html
