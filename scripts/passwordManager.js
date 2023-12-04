@@ -53,10 +53,26 @@ function getAppIconContent(appName) {
 }
 
 //Function to copy text to the clipboard
-async function copyContent(text) {
+async function copyContent(copyObj) {
   try {
-    await navigator.clipboard.writeText(text);
-    console.log('Content copied to clipboard');
+    console.log(copyObj.classList);
+    let thisTooltip = copyObj.nextElementSibling;
+    await navigator.clipboard.writeText(copyObj.innerText).then(() => {
+        thisTooltip.innerText = "Copied!";
+    }).then( () => {
+      // Create a MediaQueryList object
+      var mediaQ = window.matchMedia("(max-width: 796px)")
+      if(mediaQ.matches){
+        document.addEventListener("click", () => {
+        thisTooltip.innerHTML = "Click to copy";
+        })
+      } else {
+        setTimeout(() => {
+          thisTooltip.innerHTML = "Click to copy";
+        }, 2000)
+      }
+    });
+    
   } catch (err) {
     console.error('Failed to copy: ', err);
   }

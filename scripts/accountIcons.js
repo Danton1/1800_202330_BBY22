@@ -232,6 +232,7 @@ const accountIcons = {
       "creditcard": "fa-solid fa-credit-card",
       "roll20": "fa-solid fa-dice-d20",
       "reddit": "fa-brands fa-reddit",
+      "school": "fa-solid fa-graduation-cap",
 
       //These need testing
 
