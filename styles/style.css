@@ -217,6 +217,7 @@ section {
   color: #fff;
   padding: 1rem 0;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.93);
+  text-transform: none;
 }
 
 .home .side-content {
