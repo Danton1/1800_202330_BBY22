@@ -298,7 +298,8 @@ section {
     margin-top: 8rem;
   }
   .home aside.side-content{
-    top: 40%
+    top: 40%;
+    opacity: 40%;
   }
 }
 
