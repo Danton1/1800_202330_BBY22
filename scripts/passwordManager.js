@@ -16,7 +16,6 @@ async function decryptPassword(encryptedpassword) {
   return password.toString(CryptoJS.enc.Utf8);
 }
 
-
 function showDiv() {
   document.getElementById("div").style.display = "";
 }
@@ -77,6 +76,25 @@ async function copyContent(copyObj) {
     console.error('Failed to copy: ', err);
   }
 }
+function mediaQ(x) {
+  if (x.matches) { // If media query matches
+    document.getElementById("generate").value = "Generate";
+    console.log(window.matchMedia("max-width: 700px"))
+  } else {
+    document.getElementById("generate").value = "Generate New Password";
+  }
+}
+
+// Creating a MediaQueryList object
+var x = window.matchMedia("(max-width: 860px)")
+
+// Call listener function at run time
+mediaQ(x);
+
+// Attach listener function on state changes
+x.addEventListener("change", () => {
+  mediaQ(x);
+});
 
 let userID;
 auth.onAuthStateChanged(user => {
@@ -86,6 +104,9 @@ auth.onAuthStateChanged(user => {
     db.collection("users").doc(auth.currentUser.uid).collection("userPass")
       .get()
       .then((allAccounts) => {
+        if(allAccounts.size > 1){
+          document.querySelector('.credit').style.position = "unset";
+        }
         allAccounts.forEach(doc => {
           var username = doc.data().user;
           var password = doc.data().passWord;
@@ -109,7 +130,7 @@ auth.onAuthStateChanged(user => {
           // Set the icon content
           managerCard.querySelector("#accountIcon").classList = iconContent;
 
-          managerCard.querySelector("#account").innerHTML = " "+web;
+          managerCard.querySelector("#account").innerHTML = web;
           managerCard.querySelector('.showButton').id = docID;
           managerCard.querySelector('.remove').id = removeID;
           managerCard.querySelector('.bottom').id = infoID;

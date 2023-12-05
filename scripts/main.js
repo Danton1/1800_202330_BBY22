@@ -2,7 +2,7 @@ auth.onAuthStateChanged(user => {
   if (user) {
     console.log(user.uid); //print the uid in the browser console
     db.collection("users").doc(user.uid).get().then(userDoc => {
-      var user_name = userDoc.data().displayName;
+      var user_name = user.displayName;
       var frequency = userDoc.data().reminderFreq;
       console.log(user_name);
       document.getElementById("usernameHere").innerText = user_name;

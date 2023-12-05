@@ -1,7 +1,7 @@
 // Login
 const loginForm = document.querySelector('#login-form');
 console.log(loginForm);
-loginForm.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   //get user info
@@ -14,18 +14,26 @@ loginForm.addEventListener('submit', (e) => {
     return
     // Don't continue running the code
   }
+  try {
   // log user in
-  auth.signInWithEmailAndPassword(email, password)
-    .then(cred => {
-      console.log(cred);
-      db.collection("users").doc(cred.user.uid).update({
-        last_login: Date.now()
-      })
-        .then(() => {
+  const cred = await auth.signInWithEmailAndPassword(email, password);
+    console.log(cred);
+    // Update last login timestamp
+    await db.collection("users").doc(cred.user.uid).update({
+      last_login: Date.now()
+    }).then(() => {
           window.location.href = "whatsnext.html";
-        })
-    })
-})
+      })
+    } catch (error) {
+      // Handle authentication errors
+      if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found" || error.code === "auth/internal-error") {
+        alert('Incorrect email or password');
+      } else {
+        console.error(error.message);
+        alert('An unexpected error occurred. Please try again.');
+      }
+    }
+  });
 
 // Validate Functions
 function validate_email(email) {

@@ -35,9 +35,8 @@ html::-webkit-scrollbar-thumb {
 
 body {
   background: #100f0f;
-  background: linear-gradient(rgba(0, 44, 101, 0.25), rgba(0, 44, 101, 0.25)), url(../images/wp8623049.webp) no-repeat;
+  background: linear-gradient(rgba(0, 44, 101, 0.25), rgba(0, 44, 101, 0.25)), url(../images/wp8623049.webp);
   background-size: cover;
-  min-height: 100vh;
 }
 
 section {

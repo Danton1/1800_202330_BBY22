@@ -231,7 +231,6 @@ li {
 	body{
 		background: linear-gradient(rgba(0, 44, 101, 0.25), rgba(0, 44, 101, 0.25)), url(../images/wp8623049.webp) no-repeat;
 		    background-size: cover;
-		    min-height: 100vh;
 	}
 	main{
 		background:none
