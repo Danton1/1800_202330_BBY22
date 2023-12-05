@@ -294,6 +294,12 @@ section {
   .credit {
     margin-bottom: 7rem;
   }
+  main{
+    margin-top: 8rem;
+  }
+  .home aside.side-content{
+    top: 40%
+  }
 }
 
 @media (max-width: 450px) {
