@@ -79,7 +79,6 @@ async function copyContent(copyObj) {
 function mediaQ(x) {
   if (x.matches) { // If media query matches
     document.getElementById("generate").value = "Generate";
-    console.log(window.matchMedia("max-width: 700px"))
   } else {
     document.getElementById("generate").value = "Generate New Password";
   }
