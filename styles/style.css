@@ -534,6 +534,13 @@ section.active .modal-box {
   #menu-btn.fa-times {
     transform: rotate(180deg);
   }
+  
+  main{
+    margin-top: 8rem;
+  }
+  .home aside.side-content{
+    top: 40%
+  }
 
   .header {
     padding: 2rem;
@@ -577,7 +584,7 @@ section.active .modal-box {
     justify-content: space-between;
     z-index: 10000;
     background: #111;
-    padding-inline: 20%;
+    padding-inline: 13%;
   }
   #fixed-bottom .navbar{
     width: 100%;
