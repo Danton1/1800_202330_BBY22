@@ -54,7 +54,6 @@ function getAppIconContent(appName) {
 //Function to copy text to the clipboard
 async function copyContent(copyObj) {
   try {
-    console.log(copyObj.classList);
     let thisTooltip = copyObj.nextElementSibling;
     await navigator.clipboard.writeText(copyObj.innerText).then(() => {
         thisTooltip.innerText = "Copied!";

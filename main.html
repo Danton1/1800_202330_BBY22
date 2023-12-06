@@ -43,10 +43,13 @@
                 <span>BE BETTER, </span> <span>BE SAFE!</span>
                 <h3>Hello, <span id="usernameHere"></span> !👋</h3>
                 <span>GOOD TO SEE YOU HERE!</span>
-                <div id="passwordUpdates" style="color: white; font-size: 15pt">
+                <div style="color: white; font-size: 15pt">
+                    <p id="passwordTitle" style="display: none;">The following accounts have expired: </p>
+                    <div id="passwordUpdates">
                     <p>Your online security is in good hands with CipherSafe's Password Manager. No more worrying about
                         forgetting passwords! Each account is uniquely protected. Curious about enhancing your
                         cybersecurity skills? Scroll down to our Learning Hub! ☕</p>
+                    </div>
                 </div>
                 <a href="./passwordmanager.html" class="btn">Open Passwords</a>
             </div>
@@ -130,6 +133,7 @@
     
     <!-- Custom JavaScript file link -->
     <script src="./scripts/firebaseAPI_CipherSafe.js"></script>
+    <script src="./scripts/accountIcons.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/auth.js"></script>
     <script src="./scripts/isauthorized.js"></script>
