@@ -23,9 +23,7 @@ function populateUserInfo() {
           //if the data fields are not empty, then write them in to the form.
           if (userName != null) {
             document.getElementById("displayName").value = userName;
-            user.updateProfile({
-              displayName: username
-            })
+            
           }
           if (userBirthday != null) {
             document.getElementById("birthday").value = userBirthday;
@@ -68,16 +66,19 @@ function saveUserInfo() {
     birthday: userBirthday,
     location: userLocation,
     reminderFreq: userReminder
-  })
+  }).then(firebase.auth().currentUser.updateProfile({
+      displayName: userName
+  }))
     .then(() => {
       console.log("Document successfully updated!");
     })
   //c) disable edit
   document.getElementById("personalInfoFields").classList.add('form-disabled');
   document.getElementById('personalInfoFields').disabled = true;
-  document.getElementById("userIcon").classList.replace("fa-user-edit", "fa-user-check").then(setTimeout(() => {
+  document.getElementById("userIcon").classList.replace("fa-user-edit", "fa-user-check")
+  setTimeout(() => {
     document.getElementById("userIcon").classList.replace("fa-user-check", "fa-user-shield")
-  }, 1000))
+  }, 1500)
 }
 
 

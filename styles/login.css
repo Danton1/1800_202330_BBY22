@@ -300,3 +300,11 @@ li {
 }
 
 
+@media (max-height: 866px){
+	.credit{
+		display: none;
+	}
+	body{
+		min-height: 100vh;
+	  }
+}

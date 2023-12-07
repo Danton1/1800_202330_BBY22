@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | CipherSafe</title>
+
+    <!-- Font-awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Custom css file link -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/aboutus.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+</head>
+
+<body>
+    <!-- Preloader Section Starts Here -->
+    <div class="preloader" id="preloader">
+        <img src="./images/logo.gif" alt="LOADING" class="preloader-img">
+    </div>
+    <!-- Preloader Section Ends Here -->
+    <!-- Header Section Starts Here -->
+    <header id="navbarPlaceholder"></header>
+    <!-- Header Section Ends Here -->
+
+    <main>
+        <!-- Main Section Starts Here -->
+        <div class="separator"></div>
+        <h1 class="heading"><span><i class="fa-solid fa-shield"></i> Securing Passwords</span></h1>
+        <div class="team-container">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <div class="team-member-details" style="padding-bottom: 10rem;">
+                    <h1>Cracking the Code: Crafting Strong Passwords for Ultimate Security</h1>
+
+                    <h2>Introduction:</h2>
+
+                    <p>In today's digital age, where our lives are increasingly intertwined with technology, the
+                        importance of securing our online presence cannot be overstated. Whether you're managing
+                        personal accounts or sensitive information, the quest for airtight security is crucial. In this
+                        blog post, we'll explore the key elements that define a good password and why they are essential
+                        for safeguarding your personal and sensitive information, especially when leveraging advanced
+                        tools like CipherSafe.</p>
+
+                    <h2>Complexity is Key:</h2>
+                    <p>A strong password is characterized by its complexity. Avoid using easily guessable information
+                        such as birthdays, names, or common words. Instead, aim for a combination of uppercase and
+                        lowercase letters, numbers, and special characters. This complexity makes it significantly more
+                        challenging for hackers to crack your password using brute-force or dictionary attacks.</p>
+
+                    <h2>Length Matters:</h2>
+                    <p>While complexity is crucial, the length of your password is equally important. Aim for a minimum
+                        of 12 characters, and consider using passphrases – a series of random words or a sentence that
+                        is easy for you to remember but difficult for others to guess.</p>
+
+                    <h2>Unique to Each Account:</h2>
+                    <p>Employing unique passwords for each account is paramount. This practice prevents a security
+                        breach on one platform from compromising your entire online presence. Consider using a reliable
+                        password manager like CipherSafe to generate and store complex, unique passwords for each of
+                        your accounts.</p>
+
+                    <h2>Regular Updates:</h2>
+                    <p>As a proactive measure to enhance security, regularly update your passwords. Aim to change your
+                        passwords at least every three to six months, or immediately if you suspect any compromise.
+                        CipherSafe can facilitate this process by generating new, secure passwords for you.</p>
+
+                    <h2>Two-Factor Authentication (2FA):</h2>
+                    <p>Add an extra layer of security through Two-Factor Authentication (2FA). Enable 2FA whenever
+                        possible to bolster your account security, ensuring that even if your password is compromised,
+                        unauthorized access is still thwarted.</p>
+
+                    <h2>Avoid Common Mistakes:</h2>
+                    <p>To maximize security, avoid common mistakes such as using easily discoverable information like
+                        your username and refrain from using generic passwords. Using a password manager like CipherSafe
+                        can streamline the process, generating unique, strong passwords that adhere to best practices in
+                        password security.</p>
+
+                    <h2>Conclusion:</h2>
+
+                    <p>In the ever-evolving landscape of online security, a good password is your first line of defense
+                        against cyber threats. Whether you choose to implement these practices manually or leverage
+                        tools like CipherSafe, the effort you invest in creating strong passwords today will safeguard
+                        your digital identity and personal information in the future.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/danton-soares" target="_blank"><i
+                                class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/Danton1" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Section Ends Here -->
+    </main>
+
+    <!-- Footer Section Starts Here -->
+
+    <footer>
+        <div class="credit">&copy; Created by <a href="https://github.com/Danton1/1800_202330_BBY22" target="_blank"
+                rel="noopener noreferrer"><span>BBY22</span></a> | All rights reserved!</div>
+    </footer>
+
+    <footer id="footerPlaceholder"></footer>
+
+    <!-- Footer Section Ends Here -->
+    <!-- Custom JavaScript file link -->
+    <script src="./scripts/firebaseAPI_CipherSafe.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/auth.js"></script>
+</body>
+
+</html>

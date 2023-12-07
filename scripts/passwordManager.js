@@ -204,14 +204,36 @@ function remove(id, topID, infoID, docID, userID) {
   });
 }
 
-function edit(id, saveID, newPassID) {
+function edit(id, saveID, newPassID, docID) {
   console.log("inside edit");
   var editButton = document.getElementById(id);
   var newPass = document.getElementById(newPassID);
   var newSave = document.getElementById(saveID);
+
   editButton.addEventListener('click', function () {
     newPass.style.display = 'block';
     newSave.style.display = 'block';
+
+    // Pass the docID to saveNewPassword function
+    newSave.addEventListener('click', function() {
+      saveNewPassword(docID);
+    });
+  });
+}
+
+async function saveNewPassword(docID) {
+  var newPassID = 'newPass' + docID;
+  var newPass = document.getElementById(newPassID).value;
+
+  encryptPassword(newPass).then((encryptedPass) => {
+    db.collection("users").doc(userID).collection("userPass").doc(docID).update({
+      passWord: encryptedPass,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+      console.log("New password updated!");
+    }).catch((error) => {
+      console.error("Error updating document: ", error);
+    });
   });
 }
 
