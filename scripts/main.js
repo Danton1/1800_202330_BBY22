@@ -24,7 +24,6 @@ auth.onAuthStateChanged(user => {
             var accountName = doc.data().websiteName;
             if ((Date.now() - accountTS) > (86400000 * frequency)) {
               passwordCount++;
-              console.log(passwordCount)
               let icon = getAppIconContent(accountName.toLowerCase().replace(/[- /.]/g, ""));
               str += "\t" +"<i class='"+icon+"'></i>" + accountName + "<br>";
               document.getElementById("passwordTitle").style.display = "unset";
