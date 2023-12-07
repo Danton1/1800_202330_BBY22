@@ -22,7 +22,7 @@ loginForm.addEventListener('submit', async (e) => {
     await db.collection("users").doc(cred.user.uid).update({
       last_login: Date.now()
     }).then(() => {
-          window.location.href = "whatsnext.html";
+          window.location.href = "main.html";
       })
     } catch (error) {
       // Handle authentication errors
