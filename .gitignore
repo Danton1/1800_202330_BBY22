@@ -9,3 +9,5 @@ firebase.json
 firestore.rules
 .firebase/
 firestore.indexes.json
+package-lock.json
+package.json
