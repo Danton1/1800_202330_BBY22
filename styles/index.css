@@ -233,6 +233,11 @@ section {
   line-height: 2;
 }
 
+#passwordUpdates i{
+  font-size: 3rem;
+  margin-right: .5rem;
+}
+
 @media (max-width:1280px) {
   .home aside.side-content {
     right: 2%;
@@ -293,6 +298,13 @@ section {
 
   .credit {
     margin-bottom: 7rem;
+  }
+  .home{
+    margin-top: 8rem;
+  }
+  .home aside.side-content{
+    top: 40%;
+    opacity: 40%;
   }
 }
 

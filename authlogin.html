@@ -50,10 +50,12 @@
         </div>
         <form action="" id="login-form">
           <h1>Email</h1>
-          <input type="email" id="login_email">
+          <input type="email" placeholder="" id="login_email">
           <h1>Password</h1>
-          <input type="password" id="login_pwd">
-          <button type="submit" id='submit'>LOGIN</button>
+          <input type="password" placeholder="" id="login_pwd">
+		  <div class="btnBox">
+		  	<button type="submit" id='submit'>LOGIN</button>
+		  </div> 
           <p>
             <a href="#">Forgot your password?</a>
           </p>
@@ -75,6 +77,7 @@
 
   <!-- Custom JavaScript file link -->
   <script src="./scripts/firebaseAPI_CipherSafe.js"></script>
+  <script src="./scripts/islogged.js"></script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/auth_login.js"></script>
   <script src="./scripts/auth.js"></script>

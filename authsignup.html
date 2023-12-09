@@ -50,14 +50,16 @@
         </div>
         <form action="" id="signup-form">
           <h1>Email</h1>
-          <input type="email" id="signup_email">
+          <input type="email" placeholder="" id="signup_email">
           <h1>Username</h1>
-          <input type="text" id="signup_username">
+          <input type="text" placeholder="" id="signup_username">
           <h1>Password</h1>
-          <input type="password" id="signup_pwd">
-          <button type="submit" id='submit'>SIGN UP</button>
+          <input type="password" placeholder="" id="signup_pwd">
+          <div class="btnBox">
+          	<button type="submit" id='submit'>SIGN UP</button>
+          </div>
           <p>
-            <a href="#">Forgot your password?</a>
+            <a href="./authlogin.html">Already have an account?</a>
           </p>
         </form>
       </div>
@@ -77,6 +79,7 @@
 
   <!-- Custom JavaScript file link -->
   <script src="./scripts/firebaseAPI_CipherSafe.js"></script>
+  <script src="./scripts/islogged.js"></script>
   <script src="./scripts/auth_signup.js"></script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/auth.js"></script>

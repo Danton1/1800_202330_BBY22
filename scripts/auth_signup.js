@@ -38,6 +38,7 @@ signupForm.addEventListener('submit', (e) => {
         displayName: username,
         email: cred.user.email,
         account_created: Date.now(),
+        reminderFreq: 90,
         last_login: Date.now()
       })
       
@@ -47,7 +48,7 @@ signupForm.addEventListener('submit', (e) => {
     })
 })
 
-// Validate Functions
+// Validation Functions
 function validate_email(email) {
   expression = /^[^@]+@\w+(\.\w+)+\w$/;
   if (expression.test(email) == true) {

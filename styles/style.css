@@ -35,9 +35,8 @@ html::-webkit-scrollbar-thumb {
 
 body {
   background: #100f0f;
-  background: linear-gradient(rgba(0, 44, 101, 0.25), rgba(0, 44, 101, 0.25)), url(../images/wp8623049.webp) no-repeat;
+  background: linear-gradient(rgba(0, 44, 101, 0.25), rgba(0, 44, 101, 0.25)), url(../images/wp8623049.webp);
   background-size: cover;
-  min-height: 100vh;
 }
 
 section {
@@ -218,6 +217,7 @@ section {
   color: #fff;
   padding: 1rem 0;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.93);
+  text-transform: none;
 }
 
 .home .side-content {
@@ -440,6 +440,45 @@ section.active .modal-box {
   margin: 0 10px;
 }
 
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 30rem;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 25%;
+  margin-left: -140px;
+  font-size: 1.8rem;
+  line-height: initial;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
 @media (max-width:1280px) {
   .home aside.side-content {
     right: 2%;
@@ -492,12 +531,16 @@ section.active .modal-box {
   #menu-btn {
     display: inline-block;
   }
-  .credit {
-    display: none;
-  }
 
   #menu-btn.fa-times {
     transform: rotate(180deg);
+  }
+  
+  main{
+    margin-top: 8rem;
+  }
+  .home aside.side-content{
+    top: 40%
   }
 
   .header {
@@ -542,7 +585,7 @@ section.active .modal-box {
     justify-content: space-between;
     z-index: 10000;
     background: #111;
-    padding-inline: 20%;
+    padding-inline: 13%;
   }
   #fixed-bottom .navbar{
     width: 100%;

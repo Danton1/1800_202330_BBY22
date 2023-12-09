@@ -16,7 +16,6 @@ async function decryptPassword(encryptedpassword) {
   return password.toString(CryptoJS.enc.Utf8);
 }
 
-
 function showDiv() {
   document.getElementById("div").style.display = "";
 }
@@ -41,14 +40,59 @@ function cancel() {
   document.getElementById("removeDiv").style.display = "none";
 }
 
-// function showDialog() {
-//   var toggleButton = document.getElementById("removeButton");
-//   var content = document.getElementById("removeDiv");
-//   toggleButton.addEventListener('click', function () {
-//     content.style.display = '';
+// Function to get the icon content based on app name
+function getAppIconContent(appName) {
+  // Check if the app name exists in the accountIcons variable
+  if (accountIcons[appName]) {
+    return accountIcons[appName];
+  } else {
+    // Use a default value if the app name is not found
+    return "fa-regular fa-id-badge";
+  }
+}
 
-//   });
-// }
+//Function to copy text to the clipboard
+async function copyContent(copyObj) {
+  try {
+    let thisTooltip = copyObj.nextElementSibling;
+    await navigator.clipboard.writeText(copyObj.innerText).then(() => {
+        thisTooltip.innerText = "Copied!";
+    }).then( () => {
+      // Create a MediaQueryList object
+      var mediaQ = window.matchMedia("(max-width: 796px)")
+      if(mediaQ.matches){
+        document.addEventListener("click", () => {
+        thisTooltip.innerHTML = "Click to copy";
+        })
+      } else {
+        setTimeout(() => {
+          thisTooltip.innerHTML = "Click to copy";
+        }, 2000)
+      }
+    });
+    
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
+function mediaQ(x) {
+  if (x.matches) { // If media query matches
+    document.getElementById("generate").value = "Generate";
+  } else {
+    document.getElementById("generate").value = "Generate New Password";
+  }
+}
+
+// Creating a MediaQueryList object
+var x = window.matchMedia("(max-width: 860px)")
+
+// Call listener function at run time
+mediaQ(x);
+
+// Attach listener function on state changes
+x.addEventListener("change", () => {
+  mediaQ(x);
+});
 
 let userID;
 auth.onAuthStateChanged(user => {
@@ -58,10 +102,17 @@ auth.onAuthStateChanged(user => {
     db.collection("users").doc(auth.currentUser.uid).collection("userPass")
       .get()
       .then((allAccounts) => {
+        if(allAccounts.size > 1){
+          document.querySelector('.credit').style.position = "unset";
+        }
         allAccounts.forEach(doc => {
           var username = doc.data().user;
           var password = doc.data().passWord;
           var web = doc.data().websiteName;
+
+          // Get the icon content based on the app name
+          var iconContent = getAppIconContent(web.toLowerCase().replace(/[- /.]/g, ""));
+
           let managerCard = managerTemplate.content.cloneNode(true);
           var docID = doc.id;
           var infoID = "info" + docID;
@@ -73,6 +124,10 @@ auth.onAuthStateChanged(user => {
           var newPassID = 'newPass' + docID;
           managerCard.querySelector("#username").innerHTML = username;
           managerCard.querySelector("#pass").innerHTML = password;
+
+          // Set the icon content
+          managerCard.querySelector("#accountIcon").classList = iconContent;
+
           managerCard.querySelector("#account").innerHTML = web;
           managerCard.querySelector('.showButton').id = docID;
           managerCard.querySelector('.remove').id = removeID;
@@ -117,7 +172,7 @@ function showButton(id, infoID) {
 
 
   toggleButton.addEventListener('click', async function () {
-    let password = document.querySelector(`#${infoID} > #pass`);
+    let password = document.querySelector(`#${infoID} #pass`);
     if (content.style.display === 'none') {
       password.innerHTML = await decryptPassword(password.innerText);
       content.style.display = 'block';
@@ -149,14 +204,36 @@ function remove(id, topID, infoID, docID, userID) {
   });
 }
 
-function edit(id, saveID, newPassID) {
+function edit(id, saveID, newPassID, docID) {
   console.log("inside edit");
   var editButton = document.getElementById(id);
   var newPass = document.getElementById(newPassID);
   var newSave = document.getElementById(saveID);
+
   editButton.addEventListener('click', function () {
     newPass.style.display = 'block';
     newSave.style.display = 'block';
+
+    // Pass the docID to saveNewPassword function
+    newSave.addEventListener('click', function() {
+      saveNewPassword(docID);
+    });
+  });
+}
+
+async function saveNewPassword(docID) {
+  var newPassID = 'newPass' + docID;
+  var newPass = document.getElementById(newPassID).value;
+
+  encryptPassword(newPass).then((encryptedPass) => {
+    db.collection("users").doc(userID).collection("userPass").doc(docID).update({
+      passWord: encryptedPass,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(() => {
+      console.log("New password updated!");
+    }).catch((error) => {
+      console.error("Error updating document: ", error);
+    });
   });
 }
 

@@ -23,9 +23,7 @@ function populateUserInfo() {
           //if the data fields are not empty, then write them in to the form.
           if (userName != null) {
             document.getElementById("displayName").value = userName;
-            user.updateProfile({
-              displayName: username
-            })
+            
           }
           if (userBirthday != null) {
             document.getElementById("birthday").value = userBirthday;
@@ -68,14 +66,53 @@ function saveUserInfo() {
     birthday: userBirthday,
     location: userLocation,
     reminderFreq: userReminder
-  })
+  }).then(firebase.auth().currentUser.updateProfile({
+      displayName: userName
+  }))
     .then(() => {
       console.log("Document successfully updated!");
     })
   //c) disable edit
   document.getElementById("personalInfoFields").classList.add('form-disabled');
   document.getElementById('personalInfoFields').disabled = true;
-  document.getElementById("userIcon").classList.replace("fa-user-edit", "fa-user-check").then(setTimeout(() => {
+  document.getElementById("userIcon").classList.replace("fa-user-edit", "fa-user-check")
+  setTimeout(() => {
     document.getElementById("userIcon").classList.replace("fa-user-check", "fa-user-shield")
-  }, 1000))
+  }, 1500)
 }
+
+
+
+//---------------------------------------------------
+// This section is for displaying loging out overlay
+// and functionality.
+//---------------------------------------------------
+
+// some querySelectors
+const section = document.querySelector(".confirmation-modal"),
+  overlay = document.querySelector(".confirmation-overlay"),
+  logoutBtn = document.querySelector("#logoutBtn"),
+  closeBtn = document.querySelector(".close-btn"),
+  logoutConfirm = document.querySelector("#logoutConfirm");
+
+logoutBtn.addEventListener("click", () => {
+  section.classList.add("active");
+  document.getElementById("confirmMessage").innerHTML = `${username ? username + ", are" : "Are"} you sure you want to log out?`;
+});
+
+overlay.addEventListener("click", () =>
+  section.classList.remove("active")
+);
+closeBtn.addEventListener("click", () =>
+  section.classList.remove("active")
+);
+
+logoutConfirm.addEventListener('click', (e) => {
+  e.preventDefault;
+  auth.signOut().then(() => {
+    document.getElementById("doorConfirm").className = "fa-solid fa-check-circle";
+    document.getElementById("confirmMessage").innerHTML = `${username ? username : "User"} has been logged out.`
+  }).then(setTimeout(() => {
+    window.location.href = "index.html";
+  }, 3000));
+})
