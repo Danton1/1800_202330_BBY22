@@ -18,7 +18,6 @@ auth.onAuthStateChanged(user => {
     // No user is signed in. Load default navbar and footer
     console.log($('#navbarPlaceholder').load('./text/navbar_before_login.html'));
     console.log($('#footerPlaceholder').load('./text/footer_before_login.html'));
-    console.log('No user is signed in');
     username = "User";
   }
 });

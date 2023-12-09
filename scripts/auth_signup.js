@@ -28,7 +28,6 @@ signupForm.addEventListener('submit', (e) => {
       } else {
         alert(errorMessage);
       }
-      console.log(error);
     })
     .then(cred => {
       cred.user.updateProfile({

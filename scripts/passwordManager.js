@@ -154,7 +154,6 @@ async function saveUsernamePassword() {
     document.getElementById("div").style.display = "none";
     document.getElementById("saved").style.display = "";
     location.reload();
-    console.log("New password saved");
   })
 }
 
@@ -185,9 +184,7 @@ function remove(id, topID, infoID, docID, userID) {
     // alert ("Do you really wanna delete it?");
     content.style.display = 'none';
     content2.style.display = 'none';
-    console.log("doc id" + docID);
     db.collection("users").doc(userID).collection("userPass").doc(docID).delete().then(() => {
-      console.log("Password successfully deleted!");
       document.getElementById("removeDiv").style.display = 'none';
     }).catch((error) => {
       console.error("Error removing document: ", error);

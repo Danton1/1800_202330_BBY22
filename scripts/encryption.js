@@ -50,11 +50,6 @@ async function checkPassword(password) {
         });
         return pwnedCount;
       }).then(pwnedCount => {
-        if (pwnedCount > 0) {
-          console.log(`This password has been pwned ${pwnedCount} times.`);
-        } else {
-          console.log("This password has not been pwned.");
-        }
         return pwnedCount;
       })
   } else {

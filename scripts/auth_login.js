@@ -1,6 +1,5 @@
 // Login
 const loginForm = document.querySelector('#login-form');
-console.log(loginForm);
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -17,7 +16,6 @@ loginForm.addEventListener('submit', async (e) => {
   try {
   // log user in
   const cred = await auth.signInWithEmailAndPassword(email, password);
-    console.log(cred);
     // Update last login timestamp
     await db.collection("users").doc(cred.user.uid).update({
       last_login: Date.now()
@@ -29,7 +27,6 @@ loginForm.addEventListener('submit', async (e) => {
       if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found" || error.code === "auth/internal-error") {
         alert('Incorrect email or password');
       } else {
-        console.error(error.message);
         alert('An unexpected error occurred. Please try again.');
       }
     }
