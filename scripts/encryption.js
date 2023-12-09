@@ -1,9 +1,8 @@
-// var encryptedAES = CryptoJS.AES.encrypt("Message", "My Secret Passphrase");
-// var decryptedBytes = CryptoJS.AES.decrypt(encryptedAES, "My Secret Passphrase");
-// var plaintext = decryptedBytes.toString(CryptoJS.enc.Utf8);
-
-
-// Function to hash a password using SHA-1
+/**
+ * Function to hash a password using SHA-1
+ * @param {string} password 
+ * @returns hash with the encrpted password
+ */
 async function hashPassword(password) {
   // Converting the password string to a buffer
   const buffer = new TextEncoder().encode(password);
@@ -18,7 +17,11 @@ async function hashPassword(password) {
   return hashHex.toUpperCase();
 }
 
-// Function to check if a password has been pwned (compromised in a data breach)
+/**
+ * Function to check if a password has been pwned (compromised in a data breach)
+ * @param {string} password 
+ * @returns the number o times a password has been leaked
+ */
 async function checkPassword(password) {
   // Defining a variable to hold the amount of times a password has been pwned
   let pwnedCount = 0;

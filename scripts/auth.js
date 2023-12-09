@@ -1,5 +1,8 @@
+// Declare the user's displayname
 let username;
+// Declares a list of html files that only occur when the user is logged in
 let userpages = ["main.html", "passwordmanager.html", "userprofile.html", "whatsnext.html"]
+
 //---------------------------------------------------
 // This function loads template parts 
 // (navbar, footer) into html doc. 

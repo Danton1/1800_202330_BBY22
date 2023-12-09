@@ -1,5 +1,7 @@
-// Login
+// Selects html element
 const loginForm = document.querySelector('#login-form');
+
+// This DOM method dictates what happens when logging into the app.
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -32,7 +34,12 @@ loginForm.addEventListener('submit', async (e) => {
     }
   });
 
-// Validate Functions
+/**
+ * This function checks to see if the emails is in the valid format.
+ * 
+ * @param {string} email 
+ * @returns {boolean} true or false depending on requirements.
+ */
 function validate_email(email) {
   expression = /^[^@]+@\w+(\.\w+)+\w$/;
   if (expression.test(email) == true) {
@@ -44,6 +51,12 @@ function validate_email(email) {
   }
 }
 
+/** 
+ * This function checks to see if the passworrd is in the valid format.
+ *
+ * @param {string} password 
+ * @returns {boolean} true or false depending on requirements.
+ */
 function validate_password(password) {
   // Firebase only accepts lengths greater than 6
   if (password.length < 6) {
@@ -53,6 +66,12 @@ function validate_password(password) {
   }
 }
 
+/**
+ * This function checks to see if a field has inputs
+ * 
+ * @param {string} field 
+ * @returns true or false depending on whether there is an input in the required area
+ */
 function validate_field(field) {
   if (field == null) {
     return false

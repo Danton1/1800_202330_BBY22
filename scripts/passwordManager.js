@@ -1,33 +1,52 @@
+/**
+ * Gets the passkey from collection
+ * @returns the passkey string
+ */
 async function getPassKey() {
   const userDoc = await db.collection("users").doc(auth.currentUser.uid).get();
   let passKey = userDoc.data().account_created;
   return passKey.toString();
 }
-
+/**
+ * Encrypts the password with CryptoJS from the javascript library
+ * @param {string} password 
+ * @returns encrypted password string
+ */
 async function encryptPassword(password) {
   const passKey = await getPassKey();
   let encryptedpassword = CryptoJS.AES.encrypt(password, passKey);
   return encryptedpassword.toString();
-}
-
+} 
+/**
+ * Decrypts the encoded password
+ * @param {string} encryptedpassword 
+ * @returns regular password as a string
+ */
 async function decryptPassword(encryptedpassword) {
   const passKey = await getPassKey();
   let password = CryptoJS.AES.decrypt(encryptedpassword, passKey);
   return password.toString(CryptoJS.enc.Utf8);
 }
-
+/**
+ * Changes element styling
+ */
 function showDiv() {
   document.getElementById("div").style.display = "";
 }
-
+/**
+ * Changes element styling
+ */
 function closeDiv() {
   document.getElementById("div").style.display = "none";
 }
-
+/**
+ * Changes element styling
+ */
 function closeOK() {
   document.getElementById("saved").style.display = "none";
   window.location.reload();
 }
+// Declares a variable to get the element.
 const element = document.getElementById("saveBtn");
 
 function showInfo() {

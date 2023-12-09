@@ -1,6 +1,8 @@
+// selects the menu button and certain divs.
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.header .navbar');
 
+// some methods to determine what gets displayed on the navbar.
 menu.onclick = () =>{
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
