@@ -1,143 +1,177 @@
-.heading{
+.heading {
   margin-top: 8rem;
   max-width: 50%;
   margin-inline: auto;
 }
-.container{
+
+.container {
   padding: 0 9%;
   margin: 5rem auto;
-  max-width:100rem;
+  max-width: 100rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.form{
-  background-color:rgba(246, 240, 240, 50);
+.form {
+  background-color: rgba(246, 240, 240, 50);
   margin-bottom: 2rem;
 }
 
-.mb-3{
-  padding:1rem 5rem;
-  border:0.05rem solid #3595F1;
+.mb-3 {
+  padding: 1rem 5rem;
+  border: 0.05rem solid #3595F1;
   padding: 5rem 8rem 8rem;
   margin-bottom: 2rem;
 }
 
-.userProFile input,.userProFile select{
+.userProFile input,
+.userProFile select {
   height: 45px;
   line-height: 45px;
-background:#ffffff;
-padding:0 10px
-} 
+  background: #ffffff;
+  padding: 0 10px
+}
 
 .userProFile .mb-3 {
-    background:rgb(53 149 241 / 61%)
+  background: rgba(28, 80, 128, 0.61)
 }
 
-.form-group{
+.form-group {
   display: flex;
   justify-content: left;
-  line-height:40px;
-  
+  line-height: 40px;
+
 }
-#logoutBtn{
-	background: none;
-}
-.form-group label{
+
+.form-group label {
   font-size: 2.5rem;
   color: rgb(242, 243, 244);
 }
 
-.form-group input{
+.form-group input {
   margin: 1rem;
 }
 
-.form-group ::placeholder, .form-group input, .form-group select{
+.form-group ::placeholder,
+.form-group input,
+.form-group select {
   font-size: 2rem;
 }
 
-.form-disabled input, .form-disabled select, .form-disabled ::placeholder{
+.form-disabled input,
+.form-disabled select,
+.form-disabled ::placeholder {
   background-color: #999;
   color: #333;
 }
 
-.container .btn{
-     width:208px;
-     border-radius: 0;
-     margin-top: 2rem;
-     display: inline-block;
-     padding: 1rem 2.8rem;
-     padding-right: 3rem;
-     background: linear-gradient(130deg, #3595F1 93%, transparent 90%);
-     color: #fff;
-     cursor: pointer;
-     font-size: 1.7rem;
-     border: none;
-     height: 40px
-}
-
- .btn-info{
-	 margin-left:2rem
- }
-.container .btn:hover{
+.container .btn {
+  width: 208px;
+  border-radius: 0;
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  padding-right: 3rem;
+  background: linear-gradient(130deg, #3595F1 93%, transparent 90%);
   color: #fff;
- /* background: #3595F1; */
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
 }
 
-.container .btn:hover{
-  transform: scale(1.0);
+.btn-info {
+  margin-left: 2rem
+}
+
+.container .btn:hover,
+.container .btn:focus  {
+  background: linear-gradient(130deg, #266cad 93%, transparent 90%);
 }
 
 
-select{
+select {
   width: 20%;
   margin-left: 1rem;
 }
 
-.button-wrap{
+.button-wrap {
   display: flex;
   align-items: center;
-    justify-content: center;
+  justify-content: center;
 }
 
-.btn.logout{
-  width:30%;
+.btn.logout {
+  width: 30%;
   align-self: center;
-  border: 0.05rem solid #3595F1;
+  background: linear-gradient(130deg, #F00 93%, transparent 90%)
+}
+
+.btn.logout:hover {
+  background: linear-gradient(130deg, rgb(168, 0, 0) 93%, transparent 90%)
 }
 
 @media (max-width:1057px) {
-  .heading{
+  .heading {
     max-width: 75%;
   }
 }
 
 @media (max-width:796px) {
-	.btn.logout {
-	    width: 50%; 
-	}
-  .separator{
+  .btn.logout {
+    width: 50%;
+  }
+
+  .separator {
     margin-top: 11rem;
   }
-  .container{
+
+  .container {
+    max-width: unset;
+    width: 90%;
+    margin: 0 auto;
     margin-top: 2rem;
+    padding: 0;
     padding-bottom: 7rem;
   }
-  .mb-3{
+
+  .mb-3 {
     margin-bottom: 1rem;
   }
-  .mb-3 { 
-      padding:5rem!important
+
+  #personalInfoFields {
+    padding: 5rem;
   }
+
   .form-group label {
-      font-size:16px; 
+    font-size: 16px;
   }
-  .userProFile input, .userProFile select {
-      height: 40px;
-      line-height: 40px; 
+
+  .userProFile input,
+  .userProFile select {
+    height: 40px;
+    line-height: 40px;
   }
-  .form-group ::placeholder, .form-group input, .form-group select {
-      font-size:16px; 
+
+  .form-group ::placeholder,
+  .form-group input,
+  .form-group select {
+    font-size: 16px;
   }
+}
+
+@media (max-width:796px) {
+  #personalInfoFields{
+    padding: 1rem;
+  }
+  .heading{
+    min-width: 88%;
+  }
+}
+
+.userProFile {
+  min-width: 100vw;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }

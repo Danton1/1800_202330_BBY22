@@ -1,17 +1,20 @@
-body{
-  background: #101318;
-  min-height: unset;
-}
-
 main {
-  height: calc(100vh - (7rem + 100px));
+	height: calc(100vh - (7rem + 100px));
 	margin: 0 auto;
 	font-size: 14px;
 	line-height: 24px;
-	background:#101318;
-} 
+	background: #101318;
+}
 
-div,p,input,ul,li,h1,h2,h3,h4 {
+div,
+p,
+input,
+ul,
+li,
+h1,
+h2,
+h3,
+h4 {
 	height: auto;
 	margin: 0;
 	padding: 0;
@@ -22,372 +25,444 @@ li {
 	list-style: none;
 }
 
-.content{
-	width:1200px;
-	height:auto;
-	overflow:hidden;
-	margin:0 auto;
-	margin-top:100px;
-	position:relative;
-	}
-.dlbox{
-	width:600px;
-	margin:0 auto;
-	margin-bottom:100px;
-	}
-.dltx{
-	width:180px;
-	height:180px;
-	margin:0 auto;
-	margin-bottom:10px;
-	}
+.content {
+	width: 1200px;
+	height: auto;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 100px;
+	position: relative;
+}
+
+.dlbox {
+	width: 600px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+
+.dltx {
+	width: 180px;
+	height: 180px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
 .dltx img {
-  border: 0;
+	border: 0;
 	margin: 0;
 	padding: 0;
-  width: 100%;
+	width: 100%;
 }
-.dlbox h1{
-	height:60px;
-	line-height:60px;
-	font-weight:normal;
-	font-size:22px;
-	color:#dfe1e2;
-	}
-.dlbox input{
-	width:100%;
-	height:50px;
-	line-height:50px;
-	border:1px solid #2a2d32;
-	background:#202328;
-	border-radius:5px;
-	margin-bottom:10px;
-	outline:none;
-	color:#FFF;
-	padding-left:15px;
-	font-size:18px;
-	}
-.dlbox input:focus, .dlbox input:not(:placeholder-shown){
-  box-shadow: 0 0 5px 0px #000;
-  background: rgb(51, 58, 69)
-  }
-.dlbox button{
-	width:390px;
-	height:53px;
-	line-height:53px;
-	border:none;
-	background:#6693f0;
-	text-align:center;
-	color:#FFF;
-	font-size:20px;
-	margin-bottom:15px;
-	border-radius:5px;
-	margin-top:30px;
-	}
-	#signup-form #submit{
-		width:130px
-	}
-.dlbox button:focus{
-  font-weight: bold;
-  font-size: 23px;
-  color: #000;
-	background:#a0bfff;
-  box-shadow: 0 0 8px 1px #000;
+
+.dlbox h1 {
+	height: 60px;
+	line-height: 60px;
+	font-weight: normal;
+	font-size: 22px;
+	color: #dfe1e2;
 }
-.dlbox p{
-	text-align:center;
-	}
-.dlbox a{
-	height:40px;
-	line-height:40px;
-	font-size:20px;
-	color:#dfe1e2;
-	text-decoration:none;
-	}
-.dlbox a:hover,  .zcbox a:hover{
-  color: #6693f0;
-  text-shadow: 1px 1px 3px #111;
-  font-weight: bold;
+
+.dlbox input {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #2a2d32;
+	background: #202328;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	outline: none;
+	color: #FFF;
+	padding-left: 15px;
+	font-size: 18px;
 }
-.zcbox{
-	width:100px;
-	height:40px;
-	line-height:40px;
-	position:absolute;
-	right:30px;
-	text-align:right;
-	}
-.zcbox a{
-	color:#FFF;
-  font-size: 2rem;
-	}
-.zcbox img{
-	float:right;
-	margin-left:10px;
+
+.dlbox button {
+	width: 390px;
+	height: 53px;
+	line-height: 53px;
+	border: none;
+	background: #6693f0;
+	text-align: center;
+	color: #FFF;
+	font-size: 20px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	margin-top: 30px;
+}
+
+#signup-form #submit {
+	width: 130px
+}
+
+.dlbox p {
+	text-align: center;
+}
+
+.dlbox a {
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	color: #dfe1e2;
+	text-decoration: none;
+}
+
+.dlbox a:hover,
+.zcbox a:hover {
+	color: #6693f0;
+	text-shadow: 1px 1px 3px #111;
+	font-weight: bold;
+}
+
+.zcbox {
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	right: 30px;
+	text-align: right;
+}
+
+.zcbox a {
+	color: #FFF;
+	font-size: 2rem;
+}
+
+.zcbox img {
+	float: right;
+	margin-left: 10px;
 	margin-top: 13px;
-	}
-
-
-
-
-
-
-.flex{
-	display:flex
 }
 
-.userProFile input,.userProFile select{
-	    height: 45px;
-	    line-height: 45px;
-	background:#ffffff;
-	padding:0 10px
+
+
+
+
+
+.flex {
+	display: flex
 }
-.flex-1{
-	flex:1
+
+.userProFile input,
+.userProFile select {
+	height: 45px;
+	line-height: 45px;
+	background: #ffffff;
+	padding: 0 10px
+}
+
+.flex-1 {
+	flex: 1
 }
 
 .userProFile .mb-3 {
-   
-    background: #10355B;
-   
-}
-.inputs input{
-	height: 45px!important; width: 100%!important; margin-left: 0!important;
-}
-#squareCross{
-	position: absolute!important;top: 0px; right: 10px;
-}
-#saveBtn{ 
-	    padding: 1rem 5rem;
-	    border: 0.05rem solid #3595F1;
-	    background: transparent;
-	    color: #3595F1;
-	    transition: all .5s;
-	    font-size: 2rem;
-}
-#saveBtn:hover{ 
-	    /* background-color: #3595F1; */
-		  color: #ffffff;
-}
-.zxj_a10{
-	width: 100%; margin-left: 0;
-}
-.zxj_a11{
-	 flex-direction: column; width: 100%;
-}
-.zxj_a12{
-	 width: 100%; margin-left: 0;
-}
-.zxj_a13{
-	flex-direction: column; width: 100%;
-}
-.zxj_a14{
-	flex-direction: column; width: 100%;
-}
-.zxj_a15{
-	 width: 100%; margin-left: 0; opacity: 1;
-}
-.zxj_a16{
-	width: 100%; margin-left: 0; 
+
+	background: #10355B;
+
 }
 
-.zxj_a17{
+.inputs input {
+	height: 45px !important;
+	width: 100% !important;
+	margin-left: 0 !important;
+}
+
+#squareCross {
+	position: absolute !important;
+	top: 0px;
+	right: 10px;
+}
+
+#saveBtn {
+	padding: 1rem 5rem;
+	border: 0.05rem solid #3595F1;
+	background: transparent;
+	color: #3595F1;
+	transition: all .5s;
+	font-size: 2rem;
+}
+
+#saveBtn:hover {
+	/* background-color: #3595F1; */
 	color: #ffffff;
 }
-.zxj_a18{
+
+.zxj_a10 {
+	width: 100%;
+	margin-left: 0;
+}
+
+.zxj_a11 {
+	flex-direction: column;
+	width: 100%;
+}
+
+.zxj_a12 {
+	width: 100%;
+	margin-left: 0;
+}
+
+.zxj_a13 {
+	flex-direction: column;
+	width: 100%;
+}
+
+.zxj_a14 {
+	flex-direction: column;
+	width: 100%;
+}
+
+.zxj_a15 {
+	width: 100%;
+	margin-left: 0;
+	opacity: 1;
+}
+
+.zxj_a16 {
+	width: 100%;
+	margin-left: 0;
+}
+
+.zxj_a17 {
+	color: #ffffff;
+}
+
+.zxj_a18 {
 	color: #fcfcfc;
-} 
-.zxj_a19{
+}
+
+.zxj_a19 {
 	margin-bottom: 2%;
 }
-.zxj_a20{
+
+.zxj_a20 {
 	color: #000000;
 }
-.zxj_a21{
-	background: rgba(16,53,91,.5); color: #ffffff; padding: 40px; width: 500px; height: 400px; position: fixed; top: 0; bottom: 0; left: 0; right: 0; margin: auto; 
+
+.zxj_a21 {
+	background: rgba(16, 53, 91, .5);
+	color: #ffffff;
+	padding: 40px;
+	width: 500px;
+	height: 400px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
-.zxj_a22{
+
+.zxj_a22 {
 	color: #000000;
 }
-.zxj_a23{
-	position: fixed; bottom: 0; width: 100%; 
+
+.zxj_a23 {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 
-.zxj_eiak{
-	flex-direction: column; width: 100%;
+.zxj_eiak {
+	flex-direction: column;
+	width: 100%;
 }
 
-	
-	.userProFile input,.userProFile select{
-		    height: 45px;
-		    line-height: 45px;
-		background:#ffffff;
-		padding:0 10px
-	} 
-	
-	.userProFile .mb-3 { 
-	    background: #10355B; 
-	}
-	
-	body{
-		background: linear-gradient(rgba(0, 44, 101, 0.25), rgba(0, 44, 101, 0.25)), url(../images/wp8623049.webp) no-repeat;
-		
-	}
-	main{
-		background:none
-	}
-	.btnBox{
-		display:flex;
-		justify-content: center;
-	}
-	#submit{
-		    padding: 1rem 5rem;
-		    border: 0.05rem solid #3595F1;
-		    background: transparent;
-		    color: #3595F1;
-		    transition: all .5s;
-		    font-size: 2rem;
-			line-height: unset;
-	}
-	#submit:hover, #submit:focus{ 
-				cursor: pointer;
-		    background-color: #3595F1;
-			  color: #ffffff;
-				box-shadow: 0 0 8px 1px #000;
-	}
-	.dlbox input {
-	    height: 50px;
-	    line-height: 50px;
-	    border: 1px solid #3595F1;
-	    background: #3596f17f;
-	    border-radius: 5px;
-	    margin-bottom: 10px;
-	    outline: none;
-	    color: #FFF;
-	    padding-left: 15px;
-	    font-size: 18px;
-	}
+
+.userProFile input,
+.userProFile select {
+	height: 45px;
+	line-height: 45px;
+	background: #ffffff;
+	padding: 0 10px
+}
+
+.userProFile .mb-3 {
+	background: #10355B;
+}
+
+main {
+	background: none
+}
+
+.btnBox {
+	display: flex;
+	justify-content: center;
+}
+
+#submit {
+	padding: 1rem 5rem;
+	background: transparent;
+	line-height: unset;
+}
+
+#submit:hover,
+#submit:focus {
+	cursor: pointer;
+	background: linear-gradient(130deg, #266cad 93%, transparent 90%);
+}
+
+.dlbox input {
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #3595F1;
+	background: #3596f17f;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	outline: none;
+	color: #FFF;
+	padding-left: 15px;
+	font-size: 18px;
+}
 
 
 
 
+
+@media (max-width:9200px) {
+	.zcbox {
+		top: 5rem;
+		right: 10%;
+	}
+}
 
 @media (max-width:1280px) {
-  .content{
-    width: 90%;
-  }
+	.content {
+		width: 90%;
+	}
 }
-@media (max-width: 796px){
+
+@media (max-width: 796px) {
+	.zcbox {
+		top: 10%;
+	}
 	.dltx {
-	    width: 80px;
-	    height: 80px; 
+		width: 80px;
+		height: 80px;
 	}
-	#login-form,#signup-form{ 
-		    padding:5rem!important;
+
+	#login-form,
+	#signup-form {
+		padding: 5rem !important;
 	}
-	.credit{
+
+	.credit {
 		position: unset;
-		    bottom: 0;
-		    width: 100%;
-			margin-bottom:0
-		}
-.dlbox h1 { 
-	      font-size: 16px;  
-		      height: 40px;
-		      line-height: 40px;
-	  }
-	
-	
-	
-	.dlbox input{
-		    width: 100%!important;
+		bottom: 0;
+		width: 100%;
+		margin-bottom: 0
 	}
- 
-  main {
-    height: calc(100% - (7rem + 7rem + 100px));
-  }
-  .content{
-    width: 99%;
-  }
-  .zcbox{
-    width: unset;
-  }
-  .zcbox a {
-      font-size:16px;
-  }
-  .dlbox{
-    width: 86%;
-    margin-top: 5.5rem;
-  }
-  .dlbox input, .dlbox button{
-    width: 100%;
-  }
-}
-.credit{
-	position: fixed;
-	    bottom: 0;
-	    width: 100%;
-	}
- 
 
-@media (max-height: 866px){
-	
-	body{
-		min-height: 100vh;
-	  }
-	  .credit{
-		  margin-bottom:0
-	  }
-	  
-	  #submit{ 
-	  	    font-size: 1.7rem; 
-	      height: 40px; 
-	  }
-}
-
-
-.dlbox input:focus, .dlbox input:not(:placeholder-shown) {
-	    box-shadow: unset;
-	    background: none;
-	}
-	#login-form,#signup-form{
-		margin-inline: auto;   
-		    background: linear-gradient(130deg, rgba(53, 149, 241, .3) 97%, transparent 95%);
-		    margin: 2rem auto 12rem;
-		    font-size: 2.8rem; 
-		    padding:5rem 8rem;
-		    color: #3595F1;
-		    min-height: 200px;
-	}
-	#submit{
-		width:118px;
-		border-radius:0;
-		margin-top: 2rem;
-		    display: inline-block;
-		    padding: 1rem 2.8rem;
-		    padding-right: 3rem;
-		    background: linear-gradient(130deg, #3595F1 93%, transparent 90%);
-		    color: #fff;
-		    cursor: pointer;
-		    font-size: 1.7rem;
-			border:none;
-	    height: 40px; 
-	}
 	.dlbox h1 {
-	    font-weight: normal; 
-	    color: #dfe1e2;
-	}
-	.dlbox a { 
-	    font-size: 16px; 
-	}
-	.content { 
-	    margin-top: 8rem; 
+		font-size: 16px;
+		height: 40px;
+		line-height: 40px;
 	}
 
-	.dlbox input { 
-	    height: 40px;
-	    line-height: 40px; 
-	    font-size: 15px;
+
+
+	.dlbox input {
+		width: 100% !important;
 	}
-	
+
+	main {
+		height: calc(100% - (7rem + 7rem + 100px));
+	}
+
+	.content {
+		width: 99%;
+	}
+
+	.zcbox {
+		width: unset;
+	}
+
+	.zcbox a {
+		font-size: 16px;
+	}
+
+	.dlbox {
+		width: 86%;
+		margin-top: 5.5rem;
+	}
+
+	.dlbox input,
+	.dlbox button {
+		width: 100%;
+	}
+}
+
+.credit {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+
+@media (max-height: 866px) {
+
+	body {
+		min-height: 100vh;
+	}
+
+	.credit {
+		margin-bottom: 0
+	}
+
+	#submit {
+		font-size: 1.7rem;
+		height: 40px;
+	}
+}
+
+
+.dlbox input:focus,
+.dlbox input:not(:placeholder-shown) {
+	box-shadow: unset;
+	background: none;
+}
+
+#login-form,
+#signup-form {
+	margin-inline: auto;
+	background: linear-gradient(130deg, rgba(53, 149, 241, .3) 97%, transparent 95%);
+	margin: 2rem auto 12rem;
+	font-size: 2.8rem;
+	padding: 5rem 8rem;
+	color: #3595F1;
+	min-height: 200px;
+}
+
+#submit {
+	width: 118px;
+	border-radius: 0;
+	margin-top: 2rem;
+	display: inline-block;
+	padding: 1rem 2.8rem;
+	padding-right: 3rem;
+	background: linear-gradient(130deg, #3595F1 93%, transparent 90%);
+	color: #fff;
+	cursor: pointer;
+	font-size: 1.7rem;
+	border: none;
+	height: 40px;
+}
+
+.dlbox h1 {
+	font-weight: normal;
+	color: #dfe1e2;
+}
+
+.dlbox a {
+	font-size: 16px;
+}
+
+.content {
+	margin-top: 8rem;
+}
+
+.dlbox input {
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
+}

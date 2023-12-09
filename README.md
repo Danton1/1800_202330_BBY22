@@ -17,7 +17,6 @@ Technologies, data sources, and other resources that were used.
 * Nunito font
 * Firebase 8.0 (BAAS - Backend as a Service)
 * Crypto JS API (Password Encryption)
-* 
 * Have I Been Pwned API
 
 ## 4. Complete setup/installion/usage

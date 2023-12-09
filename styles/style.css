@@ -116,7 +116,7 @@ section {
   font-size: 1.7rem;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   transform: scale(1.1);
 }
 
