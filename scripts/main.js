@@ -1,4 +1,8 @@
-// Function to get the icon content based on app name
+/**
+ * Function to get the icon content based on app name
+ * @param {string} appName 
+ * @returns the correct app icon name from font awesome
+ */
 function getAppIconContent(appName) {
   // Check if the app name exists in the accountIcons variable
   if (accountIcons[appName]) {
@@ -9,7 +13,13 @@ function getAppIconContent(appName) {
   }
 }
 
+//declares the number of password to be displayed
 let passwordCount = 0;
+
+/** 
+ * If the user is logged in, then checks to see which passwords are out of date 
+ * and displays them on the user's profile page
+ */ 
 auth.onAuthStateChanged(user => {
   if (user) {
     db.collection("users").doc(user.uid).get().then(userDoc => {

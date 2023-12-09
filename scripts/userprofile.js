@@ -37,7 +37,6 @@ function populateUserInfo() {
         })
     } else {
       // No user is signed in.
-      console.log("No user is signed in");
     }
   });
 }
@@ -70,7 +69,6 @@ function saveUserInfo() {
       displayName: userName
   }))
     .then(() => {
-      console.log("Document successfully updated!");
     })
   //c) disable edit
   document.getElementById("personalInfoFields").classList.add('form-disabled');

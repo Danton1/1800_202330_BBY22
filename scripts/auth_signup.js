@@ -1,8 +1,7 @@
-
-// Sign up
-
+// Selects html element
 const signupForm = document.querySelector('#signup-form');
 
+// This DOM method dictates what happens when signing up into the app.
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -28,7 +27,6 @@ signupForm.addEventListener('submit', (e) => {
       } else {
         alert(errorMessage);
       }
-      console.log(error);
     })
     .then(cred => {
       cred.user.updateProfile({
@@ -48,7 +46,12 @@ signupForm.addEventListener('submit', (e) => {
     })
 })
 
-// Validation Functions
+/**
+ * This function checks to see if the emails is in the valid format.
+ * 
+ * @param {string} email 
+ * @returns {boolean} true or false depending on requirements.
+ */
 function validate_email(email) {
   expression = /^[^@]+@\w+(\.\w+)+\w$/;
   if (expression.test(email) == true) {
@@ -60,6 +63,12 @@ function validate_email(email) {
   }
 }
 
+/** 
+ * This function checks to see if the passworrd is in the valid format.
+ *
+ * @param {string} password 
+ * @returns {boolean} true or false depending on requirements.
+ */
 function validate_password(password) {
   // Firebase only accepts lengths greater than 6
   if (password.length < 6) {
@@ -69,6 +78,12 @@ function validate_password(password) {
   }
 }
 
+/**
+ * This function checks to see if a field has inputs
+ * 
+ * @param {string} field 
+ * @returns true or false depending on whether there is an input in the required area
+ */
 function validate_field(field) {
   if (field == null) {
     return false

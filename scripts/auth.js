@@ -1,5 +1,8 @@
+// Declare the user's displayname
 let username;
+// Declares a list of html files that only occur when the user is logged in
 let userpages = ["main.html", "passwordmanager.html", "userprofile.html", "whatsnext.html"]
+
 //---------------------------------------------------
 // This function loads template parts 
 // (navbar, footer) into html doc. 
@@ -18,7 +21,6 @@ auth.onAuthStateChanged(user => {
     // No user is signed in. Load default navbar and footer
     console.log($('#navbarPlaceholder').load('./text/navbar_before_login.html'));
     console.log($('#footerPlaceholder').load('./text/footer_before_login.html'));
-    console.log('No user is signed in');
     username = "User";
   }
 });
