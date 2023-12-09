@@ -1,9 +1,13 @@
-
+// Changes the page depending on whether a form can be used
 if(document.getElementById('personalInfoFields').disabled){
   document.getElementById("personalInfoFields").classList.add('form-disabled');
 }
 
 var currentUser;               //points to the document of the user who is logged in
+
+/**
+ * Gets the existing profile information of the user and displays it.
+ */
 function populateUserInfo() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:
@@ -44,6 +48,9 @@ function populateUserInfo() {
 //call the function to run it 
 populateUserInfo();
 
+/**
+ * Allows the inputs to be used.
+ */
 function editUserInfo() {
   //Enable the form fields
   document.getElementById("personalInfoFields").classList.remove('form-disabled');
@@ -51,6 +58,9 @@ function editUserInfo() {
   document.getElementById('personalInfoFields').disabled = false;
 }
 
+/**
+ * Stores the new user info.
+ */
 function saveUserInfo() {
   //enter code here
 
@@ -93,11 +103,13 @@ const section = document.querySelector(".confirmation-modal"),
   closeBtn = document.querySelector(".close-btn"),
   logoutConfirm = document.querySelector("#logoutConfirm");
 
+// logout
 logoutBtn.addEventListener("click", () => {
   section.classList.add("active");
   document.getElementById("confirmMessage").innerHTML = `${username ? username + ", are" : "Are"} you sure you want to log out?`;
 });
 
+// displays or hides logout overlay
 overlay.addEventListener("click", () =>
   section.classList.remove("active")
 );
@@ -105,6 +117,7 @@ closeBtn.addEventListener("click", () =>
   section.classList.remove("active")
 );
 
+// logout
 logoutConfirm.addEventListener('click', (e) => {
   e.preventDefault;
   auth.signOut().then(() => {

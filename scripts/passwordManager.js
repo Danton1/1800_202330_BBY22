@@ -59,7 +59,11 @@ function cancel() {
   document.getElementById("removeDiv").style.display = "none";
 }
 
-// Function to get the icon content based on app name
+/**
+ * Function to get the icon content based on app name
+ * @param {string} appName 
+ * @returns returns the name of the app the icon applies to
+ */
 function getAppIconContent(appName) {
   // Check if the app name exists in the accountIcons variable
   if (accountIcons[appName]) {
@@ -71,6 +75,11 @@ function getAppIconContent(appName) {
 }
 
 //Function to copy text to the clipboard
+
+/**
+ * This function lets user know when the password is copied
+ * @param {string} copyObj the name of the element
+ */
 async function copyContent(copyObj) {
   try {
     let thisTooltip = copyObj.nextElementSibling;
@@ -94,6 +103,10 @@ async function copyContent(copyObj) {
     console.error('Failed to copy: ', err);
   }
 }
+
+/**
+ * Function to determine which message is displayed depnding on a media query
+ */
 function mediaQ(x) {
   if (x.matches) { // If media query matches
     document.getElementById("generate").value = "Generate";
@@ -113,6 +126,10 @@ x.addEventListener("change", () => {
   mediaQ(x);
 });
 
+/**
+ * Interacts with firebase to get the saved user passwords in the 
+ * collection and display them as cards.
+ */
 let userID;
 auth.onAuthStateChanged(user => {
   if (user) {
@@ -142,7 +159,6 @@ auth.onAuthStateChanged(user => {
 
           // Set the icon content
           managerCard.querySelector("#accountIcon").classList = iconContent;
-
           managerCard.querySelector("#account").innerHTML = web;
           managerCard.querySelector('.showButton').id = docID;
           managerCard.querySelector('.remove').id = removeID;
@@ -158,6 +174,9 @@ auth.onAuthStateChanged(user => {
   }
 })
 
+/**
+ * Function to create a new username password combo to be saved in firebase.
+ */
 async function saveUsernamePassword() {
   let username = document.getElementById("user").value;
   let password = document.getElementById("passWord").value;
@@ -176,6 +195,11 @@ async function saveUsernamePassword() {
   })
 }
 
+/**
+ * The function displays the passwords when the show button is clicked.
+ * @param {string} id is the user's id
+ * @param {string} infoID the id for the element of a username/password card
+ */
 function showButton(id, infoID) {
   var toggleButton = document.getElementById(id);
   var content = document.getElementById(infoID);
@@ -195,6 +219,14 @@ function showButton(id, infoID) {
   });
 }
 
+/**
+ * This function allows the userpass document to be deleted from firebase.
+ * @param {string} id the user ID
+ * @param {string} topID the element ID for the top section of the card.
+ * @param {string} infoID the element ID for the card.
+ * @param {string} docID the document's id in firebase
+ * @param {string} userID the user's id in firebase
+ */
 function remove(id, topID, infoID, docID, userID) { 
   var toggleButton = document.getElementById(id);
   var content = document.getElementById(infoID);
