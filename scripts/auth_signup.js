@@ -40,9 +40,12 @@ signupForm.addEventListener('submit', (e) => {
         last_login: Date.now()
       })
       
-        .then(() => {
-          window.location.href = "whatsnext.html";
-        })
+        .then(setTimeout(async () => {
+          thisUserDoc = await db.collection("users").doc(cred.user.uid).get();
+          if (thisUserDoc.exists) {
+            window.location.href = "whatsnext.html";
+          }
+        },3000))
     })
 })
 
