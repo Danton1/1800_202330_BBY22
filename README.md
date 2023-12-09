@@ -18,7 +18,7 @@ Technologies, data sources, and other resources that were used.
 * Firebase 8.0 (BAAS - Backend as a Service)
 * Crypto JS API (Password Encryption)
 * Have I Been Pwned API
-* Unsplash (for images)
+* Unsplash (for)
 
 ## 4. Complete setup/installion/usage
 Just access our webapp:
