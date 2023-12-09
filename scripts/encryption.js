@@ -60,3 +60,41 @@ async function checkPassword(password) {
   }
 }
 
+const checkBtn = document.querySelector('.icon')
+const safeArea = document.querySelector('.safe')
+const unsafeArea = document.querySelector('.unsafe')
+const pwnedCountPlaceholder = document.querySelector('#pwnedCountPlaceholder')
+
+async function executeFunc() {
+  const pwd = document.querySelector('.password')
+  let pwnedCount = await checkPassword(pwd.value);
+  if (pwd.value.trim().length <= 0) {
+    pwd.value = '';
+    return alert('Please enter the password')
+  }
+  if (pwnedCount <= 0) {
+    for (let i = 0; i < document.querySelectorAll('.result div').length; i++) {
+      document.querySelectorAll('.result div')[i].style.display = 'none'
+    }
+    safeArea.style.display = 'flex'
+    return pwd.value = ''
+  }
+  for (let i = 0; i < document.querySelectorAll('.result div').length; i++) {
+    document.querySelectorAll('.result div')[i].style.display = 'none'
+  }
+  unsafeArea.style.display = 'flex'
+  pwnedCountPlaceholder.innerHTML = pwnedCount;
+  pwd.value = '';
+}
+
+checkBtn.onclick = async function () {
+  await executeFunc()
+}
+
+$(document).on("keypress", function (event) {
+  if (event.which === 13) {
+    event.preventDefault();
+    executeFunc();
+  }
+});
+
